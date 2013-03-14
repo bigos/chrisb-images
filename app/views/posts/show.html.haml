@@ -8,6 +8,7 @@
   |
   = link_to 'Back', posts_path
 
+%p= pluralize @post.comments.count, "comment"
 - @post.comments.each do |comment|
   %p= comment.content
 
