@@ -1,4 +1,10 @@
 ChrisbImages::Application.routes.draw do
+
+  match 'login' => 'user_sessions#create'
+  match 'logout' => 'user_sessions#destroy'
+  resource :user_session
+  resource :account, :controller => "users"
+  
   mount Ckeditor::Engine => '/ckeditor'
 
   # The priority is based upon order of creation:
