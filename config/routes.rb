@@ -1,11 +1,19 @@
 ChrisbImages::Application.routes.draw do
 
+  resources :comments
+
+
+  resources :posts
+
+
   match 'login' => 'user_sessions#create'
   match 'logout' => 'user_sessions#destroy'
   resource :user_session
   resource :account, :controller => "users"
   
   mount Ckeditor::Engine => '/ckeditor'
+
+  root :to => 'posts#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -56,7 +64,7 @@ ChrisbImages::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'user_session#new'
+  # root :to => 'user_session#new'
 
   # See how all your routes lay out with "rake routes"
 
