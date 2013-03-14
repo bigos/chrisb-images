@@ -9,11 +9,13 @@
   .field
     = f.label :title
     = f.text_field :title
-      .field
+  .field
     = f.label :teaser
     = f.cktext_area :teaser
+  %br
   .field
     = f.label :content
     = f.cktext_area :content
+  %br
   .actions
     = f.submit 'Save'
