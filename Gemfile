@@ -36,3 +36,16 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+### my gems
+gem 'will_paginate'
+gem 'paperclip'
+gem 'haml-rails'
+gem "authlogic", "~> 3.2.0"
+gem "ckeditor"
+
+group :development, :test do
+  gem "rspec-rails", ">= 2.0.1"
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+end
