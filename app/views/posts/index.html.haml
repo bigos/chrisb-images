@@ -9,6 +9,9 @@
       = link_to 'Show', post
       = link_to 'Edit', edit_post_path(post)
       = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - comment_count = post.comments.count
+      - if comment_count > 0        
+        = "#{comment_count}  comments"
 
 %br
 
