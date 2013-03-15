@@ -43,11 +43,11 @@ gem 'paperclip'
 gem 'haml-rails'
 gem "authlogic", "~> 3.2.0"
 gem "ckeditor"
-gem 'factory_girl_rails'
 
 group :development, :test do
   gem "rspec-rails", ">= 2.0.1"
   gem 'database_cleaner'
+  gem "factory_girl_rails", "~> 4.0"		
 end
 
 group :test do
