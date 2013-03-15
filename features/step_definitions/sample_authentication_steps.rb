@@ -28,24 +28,25 @@ When(/^I follow "(.*?)"$/) do |arg1|
 end
 
 When(/^I fill in the following:$/) do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  data = table.raw
+  fill_in('Login', :with => data[0][1])
+  fill_in('Password', :with => data[1][1])
 end
 
 When(/^I press "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  click_button(arg1)
 end
 
 Then(/^I should be on the user page$/) do
-  pending # express the regexp above with the code you wish you had
+  current_path.should == "/account"
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  find_link( arg1)
 end
 
 Then(/^I should not see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  expect {  find_link(arg1) }.to raise_error
 end
 
 Given(/^I am logged in as "(.*?)"$/) do |arg1|
