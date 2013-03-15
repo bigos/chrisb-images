@@ -5,7 +5,7 @@ ChrisbImages::Application.routes.draw do
     resources :comments
   end
 
-  match 'login' => 'user_sessions#create'
+  match 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
   resource :user_session
   resource :account, :controller => "users"
