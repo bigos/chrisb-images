@@ -3,7 +3,11 @@ require 'factory_girl'
 Given(/^the following user exists:$/) do |table|
   data = table.raw[1]
   #p data
-  # This will guess the User class
+
+  # it fixes following error
+  # Factory already registered: user (FactoryGirl::DuplicateDefinitionError)
+  FactoryGirl.factories.clear
+
   FactoryGirl.define do
     factory :user do
       login data[0]
@@ -45,18 +49,19 @@ Then(/^I should see "(.*?)"$/) do |arg1|
   find_link( arg1)
 end
 
-Then(/^I should not see "(.*?)"$/) do |arg1|
+Then(/^I should not see "(.*?)"$/) do |arg1| 
   expect {  find_link(arg1) }.to raise_error
 end
 
 Given(/^I am logged in as "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  UserSession.find.record.login.should == arg1
 end
 
 Given(/^I am on the user page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit account_path
+  current_path.should == "/account"
 end
 
 Then(/^I should be on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+  current_path.should == root_path
 end
