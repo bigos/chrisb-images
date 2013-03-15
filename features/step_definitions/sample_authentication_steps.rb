@@ -17,15 +17,14 @@ end
 
 Given(/^I am not logged in$/) do
   UserSession.find.try(:destroy)
-  #pending # express the regexp above with the code you wish you had
 end
 
 Given(/^I am on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+  visit root_path
 end
 
 When(/^I follow "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  click_link arg1
 end
 
 When(/^I fill in the following:$/) do |table|

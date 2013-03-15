@@ -11,7 +11,7 @@ Feature: Authentication
   Scenario: Successful login
     Given I am not logged in
     And I am on the homepage
-    When I follow "Log in"
+    When I follow "Login"
     And I fill in the following:
       | login         | leonard |
       | Password      | leonard |
