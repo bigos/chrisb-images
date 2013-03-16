@@ -21,8 +21,8 @@
         #footer
           &copy; Chris Beard Photography 2011
         #dump
-          = render :partial => 'layouts/simple_twitter'
-
+          %div{:style => "width:300px"}
+            = render :partial => 'layouts/twitter_widget'
           %p
             current user:
             = current_user.inspect      
@@ -34,8 +34,3 @@
             - else
               = link_to 'Login', login_path
           %p= params.inspect
-
-%div          
-  %script{:type =>"text/javascript", :src =>"http://twitter.com/javascripts/blogger.js"}
-  %script{:type =>"text/javascript", :src =>"http://api.twitter.com/1/statuses/user_timeline/CB1mages.json?callback=twitterCallback2&count=5"}
-
