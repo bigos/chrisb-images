@@ -21,9 +21,8 @@
         #footer
           &copy; Chris Beard Photography 2011
         #dump
-          %div{:id=>"twitter_div"}
-            %ul{:id=>"twitter_update_list"}
-              %li &nbsp
+          = render :partial => 'layouts/simple_twitter'
+
           %p
             current user:
             = current_user.inspect      
@@ -37,6 +36,6 @@
           %p= params.inspect
 
 %div          
-  %script{ :type =>"text/javascript", :src =>"http://twitter.com/javascripts/blogger.js"}
-  %script{ :type =>"text/javascript", :src =>"http://api.twitter.com/1/statuses/user_timeline/CB1mages.json?callback=twitterCallback2&count=5"}
+  %script{:type =>"text/javascript", :src =>"http://twitter.com/javascripts/blogger.js"}
+  %script{:type =>"text/javascript", :src =>"http://api.twitter.com/1/statuses/user_timeline/CB1mages.json?callback=twitterCallback2&count=5"}
 
