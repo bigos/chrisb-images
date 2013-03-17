@@ -26,11 +26,19 @@ Then(/^I should see page with my user profile$/) do
 end
 
 When(/^I fill in the following registration details:$/) do |table|
-  p table.raw
-  #[["login", "james_bond"], ["email", "user007@example.com"], ["Password", "secret"], ["Password confirmation", "secret"]]
-  fill_in('Login', :with => table.raw[0][0][1])
-  fill_in('Email', :with => table.raw[0][1][1])
-  fill_in('Password', :with => table.raw[0][2][1])
-  fill_in('Password confirmation', :with => table.raw[0][2][1])
-  pending # express the regexp above with the code you wish you had
+  #p table.raw
+  #p table.raw[0][1]
+  #p table.raw[1][1]
+  #p table.raw[2][1]
+  #p table.raw[3][1]
+
+  fill_in('Login', :with => table.raw[0][1])
+  fill_in('Email', :with => table.raw[1][1])
+  
+  #fill_in('Password', :with => table.raw[2][1])
+  #this gets rid of the field name ambuguity problem
+  find('#user_password').set(table.raw[2][1])
+
+  fill_in('Password confirmation', :with => table.raw[2][1])
+  
 end
