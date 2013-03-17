@@ -6,7 +6,7 @@ Feature: Authentication
   Background:
     Given the following user exists:
       | login              | password |
-      | leonard            | leonard  |
+      | leonard            | secret   |
 
   Scenario: Successful login
     Given I am not logged in
@@ -14,7 +14,7 @@ Feature: Authentication
     When I follow "Login"
     And I fill in the following:
       | login         | leonard |
-      | Password      | leonard |
+      | Password      | secret  |
     And I press "Login"
     Then I should be on the user page
     And I should see "Logout"
