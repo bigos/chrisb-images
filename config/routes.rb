@@ -8,6 +8,8 @@ ChrisbImages::Application.routes.draw do
   match 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
   resource :user_session
+
+  match 'register' => 'user#new'
   resource :account, :controller => "users"
   
   mount Ckeditor::Engine => '/ckeditor'

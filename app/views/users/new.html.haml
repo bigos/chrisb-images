@@ -1,5 +1,6 @@
 %h1 Register
 = form_for @user, :url => account_path do |f|
+  = p @user
   - if @user.errors.any?
     #error_explanation
       %h2
@@ -8,5 +9,10 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
+          
   = render :partial => "form", :object => f
+
+
+  
+  
   = f.submit "Register"
