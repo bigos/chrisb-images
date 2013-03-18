@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       # Tell the UserMailer to send a welcome Email after save
       UserMailer.welcome_email(@user).deliver
       flash[:notice] = "Account registered!"
-      redirect_back_or_default account_url
+      #redirect_back_or_default account_url
+      redirect_to root_url
     else
       render :action => :new
     end

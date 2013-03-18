@@ -12,7 +12,6 @@
         #logo{:style => "border:none red 1px; width:350px;float:left;"}
           = link_to image_tag('logo.gif'), root_url
         #login{:style=>"padding:25px;"}
-          login or register
           - if current_user
             = link_to 'Logout', logout_path
           - else
