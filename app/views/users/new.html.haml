@@ -1,4 +1,14 @@
 %h1 Register
+
+%p
+  Please Register to receive a regular newsletter containing items of photographic news, hint's, tips, inspiration and advanced notice of upcoming photographic workshops.
+%p
+  Registration is free and we will NOT pass on your details to anyone else.
+
+
+%p Chris
+
+
 = form_for @user, :url => account_path do |f|
   - if @user.errors.any?
     #error_explanation

@@ -9,19 +9,21 @@ Then(/^I should get email sent to my address$/) do
   # !!!!! we are not testing emails !!!!!!!!!!!!
   user = User.last
   puts "in real life user #{user.login} will get an email sent to #{user.email}"
+  #pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see activation link in the email$/) do
+  user = User.last
   activation_link = "http://localhost:3000/activate/#{user.perishable_token}"
   puts "user will have to follow this link #{activation_link} to activate the account"
   #pending # express the regexp above with the code you wish you had
 end
 
-Then(/^I should see activation link in the email$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
 When(/^I visit activation link$/) do
-  p activation_link
+  user = User.last
+  activation_link = "http://localhost:3000/activate/#{user.perishable_token}"
   visit activation_link
-  pending # express the regexp above with the code you wish you had
+  #pending # express the regexp above with the code you wish you had
 end
 
 Then(/^My account should get activated$/) do
