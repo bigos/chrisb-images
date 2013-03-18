@@ -6,7 +6,12 @@ Given(/^following user does not exist:$/) do |table|
 end
 
 Then(/^I should get email sent to my address$/) do
-  pending # express the regexp above with the code you wish you had
+  # !!!!! we are not testing emails !!!!!!!!!!!!
+  user = User.last
+  puts "in real life user #{user.login} will get an email sent to #{user.email}"
+  activation_link = "http://localhost:3000/activate/#{user.perishable_token}"
+  puts "user will have to follow this link #{activation_link} to activate the account"
+  #pending # express the regexp above with the code you wish you had
 end
 
 Then(/^I should see activation link in the email$/) do
@@ -14,6 +19,8 @@ Then(/^I should see activation link in the email$/) do
 end
 
 When(/^I visit activation link$/) do
+  p activation_link
+  visit activation_link
   pending # express the regexp above with the code you wish you had
 end
 
