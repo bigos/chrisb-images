@@ -1,16 +1,19 @@
 
 
 #col1
+  #image_container
+    = image_tag "pink_dawn.jpg"
   photo will go here
 
 #col3
   #col3a
-    twitter
+    %div{:style => "width:250px"}
+      = render :partial => 'layouts/twitter_widget'  
   #col3b
     latest images
   #col3c
     featured
-
+%div{:style=>"clear:both;"}
 #col2
   #col2a
     news
