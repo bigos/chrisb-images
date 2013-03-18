@@ -12,7 +12,7 @@ class UserMailer < ActionMailer::Base
   def activation_instructions(user)
     @user = user
     if Rails.env == 'development' or  Rails.env == "test" 
-      @url = "localhost:3000/"
+      @url = "http://localhost:3000/"
     else
       @url  = "http://www.chrisbeard-photography.co.uk/"
     end
