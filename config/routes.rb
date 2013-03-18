@@ -1,5 +1,7 @@
 ChrisbImages::Application.routes.draw do
 
+  get "home_page/index"
+
   match '/activate/:activation_code' => 'activations#create'
 
   get "activations/create"
@@ -17,7 +19,7 @@ ChrisbImages::Application.routes.draw do
   
   mount Ckeditor::Engine => '/ckeditor'
 
-  root :to => 'posts#index'
+  root :to => 'home_page#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
