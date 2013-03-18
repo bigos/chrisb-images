@@ -3,8 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(user)
     @user = user
-    @url  = "http://www.chrisbeard-photography.co.uk/"
-    
+
     mail(:to => user.email, 
          :from => "chris@chrisbeard-images.com",
          :subject => "Welcome to My Awesome Site")
@@ -12,10 +11,14 @@ class UserMailer < ActionMailer::Base
 
   def activation_instructions(user)
     @user = user
-    @url  = "http://www.chrisbeard-photography.co.uk/"
-    @activation_url = "abc"
+    if Rails.env == 'development' or  Rails.env == "test" 
+      @url = "localhost:3000/"
+    else
+      @url  = "http://www.chrisbeard-photography.co.uk/"
+    end
+    @activation_path = "activate/#{user.perishable_token}"
     mail(:to => user.email,
          :from => "chris@chrisbeard-images.com",
-         :subject => "Activation Instructions")
+         :subject => "Activation Instructions #{Rails.env}")
   end
 end
