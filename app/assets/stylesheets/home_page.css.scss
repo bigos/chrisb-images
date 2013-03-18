@@ -1,3 +1,42 @@
 // Place all the styles related to the HomePage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+  
+#col1{border:solid red 1px;
+  min-height:200px;
+    margin-bottom:1em;}
+
+#col3{border:solid green 1px;
+  div{width:300px;
+    min-height:300px;
+    }
+  }
+#col3a{margin-left:0px;
+  float:left;
+  background:red;
+  }
+#col3b{margin-left:0px;
+  float:left;
+  background:green;
+  }
+#col3c{margin-left:0px;
+  float:left;
+  background:blue;
+  }    
+
+#col2{border:solid blue 1px;
+  nargin:1em 0em;
+    div{min-height:200px;}}
+#col2a{background:blue;
+  margin:1em 0px;
+  float:left;
+  width:450px;
+  }
+#col2b{background:green;
+  margin:1em 0px;
+  float:right;
+  width:450px;
+  }
