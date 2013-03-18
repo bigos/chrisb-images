@@ -1,5 +1,8 @@
 ChrisbImages::Application.routes.draw do
 
+  match '/activate/:activation_code' => 'activations#create'
+
+  get "activations/create"
 
   resources :posts do
     resources :comments
