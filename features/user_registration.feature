@@ -1,4 +1,4 @@
-Feature: UserRegistration
+Feature: UserRegistrationAndActivation
   In order to register
   As a website visitor
   I want to register and activate my account
@@ -10,7 +10,8 @@ Feature: UserRegistration
   Scenario: Successful registration
     Given I am not logged in
     And I am on the homepage
-    When I follow "Register"
+    When I follow "Login"
+    And I follow "Register"
     And I fill in the following registration details:
       | login         | james_bond |
       | email         | user007@example.com |
@@ -19,8 +20,8 @@ Feature: UserRegistration
     And I press "Register"
     Then I should get email sent to my address
     And I should see activation link in the email
-
-  Scenario: Successful Activation
+    And There should be following user:
+    | login | james_bond |
     When I visit activation link
     Then My account should get activated
     And I should see page with my user profile

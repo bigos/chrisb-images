@@ -27,12 +27,22 @@ When(/^I visit activation link$/) do
 end
 
 Then(/^My account should get activated$/) do
-  pending # express the regexp above with the code you wish you had
+  User.last.active.should eq(true)
 end
 
 Then(/^I should see page with my user profile$/) do
-  pending # express the regexp above with the code you wish you had
+  current_url.should include(account_path)
+  #pending # express the regexp above with the code you wish you had
 end
+
+Then(/^There should be following user:$/) do |table|
+  # table is a Cucumber::Ast::Table
+  data = table.raw[0]
+  #p data
+  User.last.login.should eq(data[1])
+  #pending # express the regexp above with the code you wish you had
+end
+
 
 When(/^I fill in the following registration details:$/) do |table|
   #p table.raw
