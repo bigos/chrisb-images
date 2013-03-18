@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
 
   def deliver_welcome!
     reset_perishable_token!
-    UserMailer.welcome(self).deliver
+    UserMailer.welcome_email(self).deliver
   end
 end
