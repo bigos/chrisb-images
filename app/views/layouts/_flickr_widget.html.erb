@@ -5,7 +5,7 @@
 	    for (i = 0; i <= 5; i = i + 1) { // Loop through the 6 most recent, [0-9]
 		var pic = data.items[i];
 		var liNumber = i + 1; // Add class to each LI (1-6)
-		$(target).append("<a title='" + pic.title + "' href='" + pic.link + "'><img src='" + pic.media.m + "' /></a>");
+		$(target).append("<a title='" + pic.title + "' href='" + pic.link + "' class='col"+(i%2)+"'><img src='" + pic.media.m + "' class='col"+ (i%2) +"' /></a>");
 	    }
 	});
     });

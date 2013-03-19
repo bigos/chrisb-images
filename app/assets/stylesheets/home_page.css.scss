@@ -45,15 +45,22 @@
   }
 
 #flickr-div{
-  a{overflow:hidden;
-    //border:solid red 1px;
+  a{margin:1px;
+    width:145px;
+    height:145px;
     display:block;
-    width:150px;
-    height:150px;
-    clip: rect(0px 150px 150px 0px );
-    img{float:left;
-      //width:150px;
-      //height:150px;
+    overflow:hidden;
+    img{width:auto;
+      height:100%;  
+      display:block;
+      }
+    }
+  a.col0{
+    //border:solid red 1px;
+    float:left;
   }
-  }
+  a.col1{
+    //border:solid red 1px;
+    float:right;
+    }
   }
