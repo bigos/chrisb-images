@@ -46,9 +46,14 @@
 
 #flickr-div{
   a{overflow:hidden;
-    float:left;
-    img{width:150px;
-      height:150px;
+    //border:solid red 1px;
+    display:block;
+    width:150px;
+    height:150px;
+    clip: rect(0px 150px 150px 0px );
+    img{float:left;
+      //width:150px;
+      //height:150px;
   }
   }
   }
