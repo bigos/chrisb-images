@@ -12,7 +12,7 @@
   }}
 
 #col3{border:none green 1px;
-  div{width:300px;
+  div{width:250px;
     min-height:300px;
     }
   }
@@ -20,14 +20,17 @@
   float:left;
   //background:red;
   }
-#col3b{margin-left:0px;
+#col3c{margin-left:100px;
+  width:250px;
   float:left;
   //background:green;
-  }
-#col3c{margin-left:0px;
-  float:left;
-  background:blue;
   }    
+#col3b{margin-left:0px;
+  float:right;
+  line-height: 22px;
+  //background:blue;
+  }
+
 
 #col2{border:solid blue 1px;
   nargin:1em 0em;
@@ -46,23 +49,24 @@
 #grid_wrapper{padding-left:15px;}
   
 #flickr-div{
-  a{margin:1px;
+  a{margin:0px;
+    text-decoration:none;
     img{
       }
     }
   a.col0{
     //border:solid red 1px;
-    margin:0px 0px 10px 0px;  
+    margin:0px 2px 0px 0px;  
     float:left;
   }
   a.col1{
     //border:solid red 1px;
-    margin:0px 0px 10px 20px;
+    margin:0px 2px 0px 0px;
     float:left;
     }
   a.col2{
     //border:solid red 1px;
-    margin:0px 0px 10px 20px;
+    margin:0px 0px 0px 0px;
     float:left;
     }
   }
