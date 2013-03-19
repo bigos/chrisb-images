@@ -11,7 +11,8 @@
 %br
 #social_buttons  
   = render :partial => "layouts/pinterest_widget"
-  = render :partial => "layouts/facebook_like_widget"  
+  = render :partial => "layouts/facebook_like_widget"
+
 
 %p= pluralize @post.comments.count, "comment"
 - @post.comments.each do |comment|
@@ -26,9 +27,8 @@
   = f.text_area :content
   = f.submit
 
+- n = 5
+#more_social_buttons
+  = rsocialize_div_tag("", {:div_template=>"example#{n}"})
 
-
-
-#todo  
-  TODO: add buttons: like tweet share pintrest
-  =link_to "Use Rsocialize", "https://github.com/treble37/rsocialize"
+= rsocialize_js_tag({:js_template=>"example#{n}"})  

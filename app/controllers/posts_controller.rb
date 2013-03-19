@@ -13,6 +13,28 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @js_custom_options = {
+      demo1: {
+        share: {
+          googlePlus: true,
+          facebook: true,
+          twitter: true
+        },
+        buttons: {
+          googlePlus: {size: 'tall'},
+          facebook: {layout: 'box_count'},
+          twitter: {count: 'vertical', via: '_JulienH'}
+        },
+        hover: %Q[function(api, options){
+              $(api.element).find('.buttons').show();
+            }],
+        hide: %Q[function(api, options){
+              $(api.element).find('.buttons').hide();
+            }],
+        enableTracking: true
+      }
+    }
+
     @post = Post.find(params[:id])
 
     respond_to do |format|
