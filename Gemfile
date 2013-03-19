@@ -38,6 +38,8 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 ### my gems
+gem 'jquery-ui-rails'
+
 gem 'will_paginate'
 gem 'paperclip'
 gem 'haml-rails'

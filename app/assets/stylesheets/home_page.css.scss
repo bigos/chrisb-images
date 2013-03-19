@@ -44,4 +44,11 @@
   width:450px;
   }
 
-#flickr-div a img{width:50%;}
+#flickr-div{
+  a{overflow:hidden;
+    float:left;
+    img{width:150px;
+      height:150px;
+  }
+  }
+  }
