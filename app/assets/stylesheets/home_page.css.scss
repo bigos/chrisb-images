@@ -23,7 +23,7 @@
   }
 #col3b{margin-left:0px;
   float:left;
-  //background:green;
+  background:green;
   }
 #col3c{margin-left:0px;
   float:left;
@@ -44,14 +44,16 @@
   width:450px;
   }
 
-#flickr-div{
+#grid_wrapper{padding-left:15px;}
+  
+#flickr-div{border:solid red 1px;
   a{margin:1px;
     img{
       }
     }
   a.col0{
     //border:solid red 1px;
-    margin:0px 0px 10px 20px;  
+    margin:0px 0px 10px 0px;  
     float:left;
   }
   a.col1{
