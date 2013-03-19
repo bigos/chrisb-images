@@ -46,21 +46,22 @@
 
 #flickr-div{
   a{margin:1px;
-    width:145px;
-    height:145px;
-    display:block;
-    overflow:hidden;
-    img{width:auto;
-      height:100%;  
-      display:block;
+    img{
       }
     }
   a.col0{
     //border:solid red 1px;
+    margin:0px 0px 10px 20px;  
     float:left;
   }
   a.col1{
     //border:solid red 1px;
-    float:right;
+    margin:0px 0px 10px 20px;
+    float:left;
+    }
+  a.col2{
+    //border:solid red 1px;
+    margin:0px 0px 10px 20px;
+    float:left;
     }
   }
