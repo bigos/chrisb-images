@@ -24,7 +24,7 @@
           = yield
           %div{:style=>'clear:both'}          
         #footer
-          &copy; Chris Beard Photography 2011
+          &copy; Chris Beard Photography 2013
         #dump       
           
           = render :partial => 'layouts/flickr_widget'
@@ -35,3 +35,5 @@
             current session:
             = current_user_session.inspect
           %p= params.inspect
+          
+%script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"
