@@ -38,7 +38,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 ### my gems
-gem 'jquery-ui-rails'
 
 gem 'will_paginate'
 gem 'paperclip'
@@ -55,3 +54,5 @@ end
 group :test do
   gem 'cucumber-rails'      
 end
+
+gem 'rsocialize'

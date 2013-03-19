@@ -8,9 +8,10 @@
   |
   = link_to 'Back', posts_path
 
-%br  
-= render :partial => "layouts/pinterest_widget"
-  
+%br
+#social_buttons  
+  = render :partial => "layouts/pinterest_widget"
+  = render :partial => "layouts/facebook_like_widget"  
 
 %p= pluralize @post.comments.count, "comment"
 - @post.comments.each do |comment|
@@ -30,3 +31,4 @@
 
 #todo  
   TODO: add buttons: like tweet share pintrest
+  =link_to "Use Rsocialize", "https://github.com/treble37/rsocialize"
