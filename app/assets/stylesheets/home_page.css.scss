@@ -5,8 +5,8 @@
 
 
   
-#col1{border:solid red 1px;
-  min-height:200px;
+#col1{//border:solid red 1px;
+  min-height:100px;
   img{margin:auto;
     display:block;
   }}
@@ -32,15 +32,15 @@
   }
 
 
-#col2{border:solid blue 1px;
+#col2{//border:solid blue 1px;
   nargin:1em 0em;
-    div{min-height:200px;}}
-#col2a{background:blue;
+    div{min-height:100px;}}
+#col2a{//background:blue;
   margin:1em 0px;
   float:left;
   width:450px;
   }
-#col2b{background:green;
+#col2b{//background:green;
   margin:1em 0px;
   float:right;
   width:450px;
