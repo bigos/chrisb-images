@@ -1,6 +1,9 @@
 ChrisbImages::Application.routes.draw do
   
 
+  resources :editables
+
+
   get "home_page/index"
 
   match '/activate/:activation_code' => 'activations#create'
