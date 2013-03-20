@@ -1,5 +1,5 @@
 ChrisbImages::Application.routes.draw do
-  match '/sharrre' => 'Rsocialize#sharrre'
+  
 
   get "home_page/index"
 
