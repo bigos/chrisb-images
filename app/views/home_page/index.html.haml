@@ -1,9 +1,10 @@
 
 
 #col1
-  #image_container
-    = image_tag "pink_dawn.jpg"
-  photo will go here
+  #image_container  
+    %div{:id => @big_photo.name}
+      = raw @big_photo.content
+  
 
 #col3
 
