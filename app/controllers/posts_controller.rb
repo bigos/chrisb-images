@@ -13,18 +13,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @js_custom_options = {
-      demo1: {
-        share: { googlePlus: true, facebook: true, twitter: true, digg: true, delicious: true, stumbleupon: true, linkedin: true, pinterest: true },
-        buttons: {
-          googlePlus: {size: 'tall'},
-          facebook: {layout: 'box_count'},
-          twitter: {count: 'vertical', via: '_ruby_object'}
-        },
-        enableTracking: true
-      }
-    }
-
     @post = Post.find(params[:id])
 
     respond_to do |format|
