@@ -15,22 +15,12 @@ class PostsController < ApplicationController
   def show
     @js_custom_options = {
       demo1: {
-        share: {
-          googlePlus: true,
-          facebook: true,
-          twitter: true
-        },
+        share: { googlePlus: true, facebook: true, twitter: true, digg: true, delicious: true, stumbleupon: true, linkedin: true, pinterest: true },
         buttons: {
           googlePlus: {size: 'tall'},
           facebook: {layout: 'box_count'},
-          twitter: {count: 'vertical', via: '_JulienH'}
+          twitter: {count: 'vertical', via: '_ruby_object'}
         },
-        hover: %Q[function(api, options){
-              $(api.element).find('.buttons').show();
-            }],
-        hide: %Q[function(api, options){
-              $(api.element).find('.buttons').hide();
-            }],
         enableTracking: true
       }
     }
