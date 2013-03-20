@@ -25,7 +25,8 @@
           = yield
           %div{:style=>'clear:both'}          
         #footer
-          &copy; Chris Beard Photography 2013
+          &copy; Chris Beard Photography
+          = Time.now.year
         #dump       
           
           = render :partial => 'layouts/flickr_widget'
