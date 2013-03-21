@@ -10,8 +10,10 @@ Given(/^the following user exists:$/) do |table|
 
   FactoryGirl.define do
     factory :user do
-      login data[0]
+      username data[0]
       password data[1]
+      active true
+      email "user@example.com"
       password_confirmation data[1]
     end
   end
@@ -33,7 +35,7 @@ end
 
 When(/^I fill in the following:$/) do |table|
   data = table.raw
-  fill_in('Login', :with => data[0][1])
+  fill_in('Username', :with => data[0][1])
   fill_in('Password', :with => data[1][1])
 end
 
@@ -54,7 +56,7 @@ Then(/^I should not see "(.*?)"$/) do |arg1|
 end
 
 Given(/^I am logged in as "(.*?)"$/) do |arg1|
-  UserSession.find.record.login.should == arg1
+  UserSession.find.record.username.should == arg1
 end
 
 Given(/^I am on the user page$/) do

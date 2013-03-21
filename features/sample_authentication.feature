@@ -5,15 +5,15 @@ Feature: Authentication
 
   Background:
     Given the following user exists:
-      | login              | password |
-      | leonard            | secret   |
+      | username | password |
+      | leonard  | secret   |
 
   Scenario: Successful login
     Given I am not logged in
     And I am on the homepage
     When I follow "Login"
     And I fill in the following:
-      | login         | leonard |
+      | username      | leonard |
       | Password      | secret  |
     And I press "Login"
     Then I should be on the user page
