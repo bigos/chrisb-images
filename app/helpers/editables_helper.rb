@@ -4,7 +4,11 @@ module EditablesHelper
     if current_user     
       edit_link = link_to("Edit", edit_editable_path(editable)) if current_user.login == 'admin'
     end
-    "<div id=\"#{editable.name}\">\n#{editable.content}\n</div>#{edit_link}"
-
+    begin
+      content = editable.content 
+    rescue
+      content = "#{h $!}\n<br>probably you need to have some content under name: <strong>#{name}</strong> defined in editables"
+    end
+    "<div id=\"#{name}\">\n#{content}\n</div>#{edit_link}"
   end
 end
