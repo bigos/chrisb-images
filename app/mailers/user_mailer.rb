@@ -19,6 +19,19 @@ class UserMailer < ActionMailer::Base
     @activation_path = "activate/#{user.perishable_token}"
     mail(:to => user.email,
          :from => "chris@chrisbeard-images.com",
-         :subject => "Activation Instructions #{Rails.env}")
+         :subject => "Activation Instructions")
+  end
+
+  def password_reset_instructions(user)
+   if Rails.env == 'development' or  Rails.env == "test" 
+      @url = "http://localhost:3000/"
+    else
+      @url  = "http://www.chrisbeard-photography.co.uk/"
+    end
+    @reset_path = "password_resets/#{user.perishable_token}"
+    mail(:to => user.email,
+         :from => "chris@chrisbeard-images.com",
+         :subject => "Password Reset Instructions")
+    
   end
 end
