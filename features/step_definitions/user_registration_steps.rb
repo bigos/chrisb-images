@@ -1,14 +1,14 @@
 
 
 Given(/^following user does not exist:$/) do |table|
-  login = table.raw[0][1]
-  User.where(:login => login).first.should be(nil)
+  username = table.raw[0][1]
+  User.where(:username => username).first.should be(nil)
 end
 
 Then(/^I should get email sent to my address$/) do
   # !!!!! we are not testing emails !!!!!!!!!!!!
   user = User.last
-  puts "in real life user #{user.login} will get an email sent to #{user.email}"
+  puts "in real life user #{user.username} will get an email sent to #{user.email}"
   #pending # express the regexp above with the code you wish you had
 end
 
@@ -39,7 +39,7 @@ Then(/^There should be following user:$/) do |table|
   # table is a Cucumber::Ast::Table
   data = table.raw[0]
   #p data
-  User.last.login.should eq(data[1])
+  User.last.username.should eq(data[1])
   #pending # express the regexp above with the code you wish you had
 end
 
@@ -51,7 +51,7 @@ When(/^I fill in the following registration details:$/) do |table|
   #p table.raw[2][1]
   #p table.raw[3][1]
 
-  fill_in('Login', :with => table.raw[0][1])
+  fill_in('Username', :with => table.raw[0][1])
   fill_in('Email', :with => table.raw[1][1])
   
   #fill_in('Password', :with => table.raw[2][1])

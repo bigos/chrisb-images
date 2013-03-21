@@ -2,7 +2,7 @@ module EditablesHelper
   def editable_content(name)
     editable = Editable.where(:name => name).first
     if current_user     
-      edit_link = link_to("Edit", edit_editable_path(editable)) if current_user.login == 'admin'
+      edit_link = link_to("Edit", edit_editable_path(editable)) if current_user.username == 'admin'
     end
     begin
       content = editable.content 

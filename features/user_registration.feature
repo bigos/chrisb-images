@@ -5,7 +5,7 @@ Feature: UserRegistrationAndActivation
 
   Background:
     Given following user does not exist:
-    | login | james_bond |
+    | username | james_bond |
 
   Scenario: Successful registration
     Given I am not logged in
@@ -13,7 +13,7 @@ Feature: UserRegistrationAndActivation
     When I follow "Login"
     And I follow "Register"
     And I fill in the following registration details:
-      | login         | james_bond |
+      | username      | james_bond |
       | email         | user007@example.com |
       | Password      | secret  |
       | Password confirmation | secret |
@@ -21,7 +21,7 @@ Feature: UserRegistrationAndActivation
     Then I should get email sent to my address
     And I should see activation link in the email
     And There should be following user:
-    | login | james_bond |
+    | username | james_bond |
     When I visit activation link
     Then My account should get activated
     And I should see page with my user profile
