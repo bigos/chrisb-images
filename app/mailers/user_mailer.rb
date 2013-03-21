@@ -24,11 +24,11 @@ class UserMailer < ActionMailer::Base
 
   def password_reset_instructions(user)
    if Rails.env == 'development' or  Rails.env == "test" 
-      @url = "http://localhost:3000/"
+      @url = "http://localhost:3000"
     else
-      @url  = "http://www.chrisbeard-photography.co.uk/"
+      @url  = "http://www.chrisbeard-photography.co.uk"
     end
-    @reset_path = "password_resets/#{user.perishable_token}"
+    @reset_path = edit_password_reset_path(user.perishable_token)
     mail(:to => user.email,
          :from => "chris@chrisbeard-images.com",
          :subject => "Password Reset Instructions")
