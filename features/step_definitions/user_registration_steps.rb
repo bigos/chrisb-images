@@ -44,7 +44,7 @@ Then(/^There should be following user:$/) do |table|
 end
 
 Then(/^activated_at field should not be nil$/) do
-  User.last.active.should eq(nil)
+  User.last.activated_at.should_not be(nil)
 end
 
 
