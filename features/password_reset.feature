@@ -7,7 +7,6 @@ Feature: PasswordReset
     Given following user does exist:
     | username | james_bond          |
     | password | oldPass             |
-    | email    | user007@example.com |
   Scenario: Successful password reset
     Given I am not logged in
     And I am on the homepage
