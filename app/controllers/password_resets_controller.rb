@@ -24,13 +24,13 @@ class PasswordResetsController < ApplicationController
   def update
     @user.password = params[:password]
     # Only if your are using password confirmation
-    # @user.password_confirmation = params[:password]
+    @user.password_confirmation = params[:password]
 
     # Use @user.save_without_session_maintenance instead if you
     # don't want the user to be signed in automatically.
     if @user.save
       flash[:success] = "Your password was successfully updated"
-      redirect_to @user
+      redirect_to account_url
     else
       render :action => :edit
     end
