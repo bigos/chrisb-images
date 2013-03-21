@@ -24,4 +24,5 @@ Feature: UserRegistrationAndActivation
     | username | james_bond |
     When I visit activation link
     Then My account should get activated
+    And activated_at field should not be nil
     And I should see page with my user profile

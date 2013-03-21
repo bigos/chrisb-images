@@ -43,6 +43,10 @@ Then(/^There should be following user:$/) do |table|
   #pending # express the regexp above with the code you wish you had
 end
 
+Then(/^activated_at field should not be nil$/) do
+  User.last.active.should eq(nil)
+end
+
 
 When(/^I fill in the following registration details:$/) do |table|
   #p table.raw

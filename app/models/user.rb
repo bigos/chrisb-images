@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   acts_as_authentic
 
   def activate!
+    self.activated_at = Time.now
     self.active = true
     save
   end
