@@ -78,7 +78,7 @@
   color:white;
   position:relative;
   float:left;
-  div{width:220px;
+  div{width:160px;
     display:inline-block;    
     }
   div.col1{//background:#333;
@@ -87,7 +87,7 @@
     }
   div.col2{//background:#555;
     
-    margin-left:20px;
+    margin-left:70px;
     span{line-height:70px;}
     img{float:right}
     }
@@ -97,7 +97,7 @@
     ul{padding-left:0px;
       margin-right:1em;
         }
-    li{padding-left:1em;
+    li{padding-left:0em;
       list-style-type:none;
         p{font-size:0.75em;
           }

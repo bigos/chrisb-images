@@ -3,7 +3,7 @@ class HomePageController < ApplicationController
     @big_photo = Editable.where(:name => "big_photo").first
     #logger.info @big_photo.inspect
     @featured_image = Editable.where(:name => "featured_image").first
-    @posts = Post.find(:all, :order => "created_at DESC",:limit => 5)
+    @posts = Post.find(:all, :order => "created_at DESC",:limit => 3)
 
 
 
