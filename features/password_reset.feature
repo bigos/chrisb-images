@@ -4,7 +4,7 @@ Feature: Password Reset
   I want to reset it
 
   Scenario: Reset password
-    Given a user exists with email: "user@domain.com", password: "password"
+    Given a user exists with email: "user@domain.com", password: "password" and username: "test_user"
     And I am not logged in
     And I am on the homepage
     When I follow "Login"
@@ -13,27 +13,24 @@ Feature: Password Reset
     Then I should see text "Reset Password"
     And I should see text "Please enter your email address below"
     When I fill in "email" with "user@domain.com"
+    And I press "Reset Password"  
 
-    And I press "Reset Password"
-    Then I should see "Instructions to reset your password have been emailed to you"
-    And "user@domain.com" should have an email
-    When I open the email
-    Then I should see "Password Reset Instructions" in the email body
-    When I follow "Reset Password" in the email
-    Then I should see "Update your password"
-    When I fill in "password" with "newpassword"
+    Then I should see password change link in the email
+    When I follow Reset Password link in the email
+    When I fill in xpath "password" with "newpassword"
+    When I fill in xpath "password_confirmation" with "newpassword"    
     And I press "Update Password"
-    Then I should see "Your password was successfully updated"
     When I am not logged in
-    Then I should be able to log in with email "user@domain.com" and password "newpassword"
+    Then I should be able to log in with username "test_user" and password "newpassword"
 
   Scenario: Reset password no account
     Given I am not logged in
-    And I am on the login page
-    Then I should see "Forgot Password"
-    When I follow "Forgot Password"
-    Then I should see "Reset Password"
-    And I should see "Please enter your email address below"
-    When I fill in "email" with "user@domain.com"
+    And I am on the homepage
+    When I follow "Login"
+
+    And I follow "I forgot my password"
+    Then I should see text "Reset Password"
+    And I should see text "Please enter your email address below"
+    When I fill in "email" with "nonexistent_user@domain.com"
     And I press "Reset Password"
-    Then I should see "No user was found with email address user@domain.com"  
+    Then I should see text "No user was found with email address nonexistent_user@domain.com" 
