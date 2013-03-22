@@ -20,12 +20,12 @@
   float:left;
   //background:red;
   }
-#col3c{margin-left:105px;
+#col3b{margin-left:105px;
   width:250px;
   float:left;
   //background:green;
   }    
-#col3b{margin-left:0px;
+#col3c{margin-left:0px;
   float:right;
   line-height: 22px;
   //background:blue;
@@ -70,3 +70,12 @@
     float:left;
     }
   }
+
+#footer_area{clear:both;
+  div.col1{background:#333;
+    }
+  div.col2{background:#555;
+    }
+  div.col3{background:#777;
+    }
+}
