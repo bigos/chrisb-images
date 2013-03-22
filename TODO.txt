@@ -1,0 +1,13 @@
+save featured image posts.
+there will vbe more featured images
+appearing on given date (published)
+
+captcha
+
+large photo photo on top will be raplaced by a series of photos with some transitions slides, each having editable content.
+
+email newsletter subscription:
+filling in the address in the footer mockup should register for email newsletter
+email newsletter should include opt out link.
+this section as per footer mockup image sjould go above the home page's footer
+

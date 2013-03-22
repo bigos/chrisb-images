@@ -34,15 +34,14 @@
         #footer
           &copy; Chris Beard Photography
           = Time.now.year
-        #dump       
-          
-          = render :partial => 'layouts/flickr_widget'
-          %p
-            current user:
-            = current_user.inspect      
-          %p
-            current session:
-            = current_user_session.inspect
-          %p= params.inspect
+      #dump                 
+        = render :partial => 'layouts/flickr_widget'
+        %p 
+          current user:
+          = current_user.inspect      
+        %p 
+          current session:
+          = current_user_session.inspect
+        %p= params.inspect
           
 %script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"
