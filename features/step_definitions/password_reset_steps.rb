@@ -2,7 +2,7 @@ require 'factory_girl'
 
 
 Given(/^a user exists with email: "(.*?)", password: "(.*?)"$/) do |arg1, arg2|
-  FactoryGirl.factories.clear
+  
 
   FactoryGirl.define do
     factory :user do
@@ -15,7 +15,6 @@ Given(/^a user exists with email: "(.*?)", password: "(.*?)"$/) do |arg1, arg2|
   end
   user = FactoryGirl.create(:user) 
   p user
-  true
 end
 
 Then(/^I should see text "(.*?)"$/) do |arg1|

@@ -4,16 +4,17 @@ Feature: Password Reset
   I want to reset it
 
   Scenario: Reset password
-    Given I am not logged in
+    Given a user exists with email: "user@domain.com", password: "password"
+    And I am not logged in
     And I am on the homepage
     When I follow "Login"
 
     And I follow "I forgot my password"
     Then I should see text "Reset Password"
-    And I should see "Please enter your email address below"
+    And I should see text "Please enter your email address below"
     When I fill in "email" with "user@domain.com"
-    And a user exists with email: "user@domain.com", password: "password"
-    And I press "<h1>Reset Password"
+
+    And I press "Reset Password"
     Then I should see "Instructions to reset your password have been emailed to you"
     And "user@domain.com" should have an email
     When I open the email
