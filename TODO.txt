@@ -11,3 +11,4 @@ filling in the address in the footer mockup should register for email newsletter
 email newsletter should include opt out link.
 this section as per footer mockup image sjould go above the home page's footer
 
+blog posts teasers on the home page can display time ago in words, we'll see how it goes.
