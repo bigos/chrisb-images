@@ -82,17 +82,19 @@
     display:inline-block;    
     }
   div.col1{//background:#333;
-    float:left;      
+    width:260px;
+    float:left;
+    p{  line-height:20px;}
     margin-left:20px;
     }
   div.col2{//background:#555;
-    
+    width:160px;
     margin-left:70px;
     span{line-height:70px;}
     img{float:right}
     }
   div.col3{//background:#777;
-    width:520px;;
+    width:440px;;
     float:right;
     ul{padding-left:0px;
       margin-right:1em;
