@@ -72,10 +72,21 @@
   }
 
 #footer_area{clear:both;
+  min-height:5px;
+  width:100%;
+  background:red;
+  position:relative;
+  float:left;
+  div{width:340px;
+    display:inline-block;
+    }
   div.col1{background:#333;
+    float:left;	
     }
   div.col2{background:#555;
+    float:left;	
     }
   div.col3{background:#777;
+    float:right;
     }
 }
