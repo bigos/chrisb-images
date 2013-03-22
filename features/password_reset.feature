@@ -1,35 +1,37 @@
-Feature: PasswordReset
-  In to solve forgotten password problem
-  As a registered user
-  I want to change my password
+Feature: Password Reset
+  In order to retrieve a lost password
+  As a user of this site
+  I want to reset it
 
-  Background:
-    Given following user does exist:
-    | username | james_bond          |
-    | password | oldPass             |
-  Scenario: Successful password reset
+  Scenario: Reset password
     Given I am not logged in
-    And I am on the homepage
-    And I follow "Login"
-    And I follow "I forgot my password"
-    Then I should see password reset form
-
-    When I fill in following:
-    | password              | newSecret |
-    | password confirmation | newSecret |
-    And I press "Submit"   
-    Then I should see message about email activation
-    And should get password reset email
-    When I visit password reset link
-    Then I should be on password reset success page
-
+    And a user exists with email: "user@domain.com", password: "password"
+    And I am on the login page
+    Then I should see "Forgot Password"
+    When I follow "Forgot Password"
+    Then I should see "Reset Password"
+    And I should see "Please enter your email address below"
+    When I fill in "email" with "user@domain.com"
+    And I press "Reset Password"
+    Then I should see "Instructions to reset your password have been emailed to you"
+    And "user@domain.com" should have an email
+    When I open the email
+    Then I should see "Password Reset Instructions" in the email body
+    When I follow "Reset Password" in the email
+    Then I should see "Update your password"
+    When I fill in "password" with "newpassword"
+    And I press "Update Password"
+    Then I should see "Your password was successfully updated"
     When I am not logged in
-    And I am on the homepage
-    When I follow "Login"
-    And I fill in the following:
-      | username      | james_bond |
-      | Password      | newSecret  |
-    And I press "Login"
-    Then I should be on the user page
-    And I should see "Logout"
+    Then I should be able to log in with email "user@domain.com" and password "newpassword"
 
+  Scenario: Reset password no account
+    Given I am not logged in
+    And I am on the login page
+    Then I should see "Forgot Password"
+    When I follow "Forgot Password"
+    Then I should see "Reset Password"
+    And I should see "Please enter your email address below"
+    When I fill in "email" with "user@domain.com"
+    And I press "Reset Password"
+    Then I should see "No user was found with email address user@domain.com"  
