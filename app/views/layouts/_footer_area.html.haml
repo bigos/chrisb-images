@@ -23,9 +23,7 @@
       = image_tag 'twitter.png'
   %div{class: 'col3'}
     %h3 Latest Blog
-    %br
-    4
-    %br
-    5
-    %br
-    6
+    %ul
+      - @posts.each do |post|
+        %lI
+          = raw post.teaser

@@ -91,7 +91,12 @@
     span{line-height:70px;}
     img{float:right}
     }
-  div.col3{background:#777;
+  div.col3{//background:#777;
+    width:520px;;
     float:right;
+    ul{padding-left:0px;
+      margin-right:1em;}
+    li{padding-left:1em;
+      list-style-type:none;}  
     }
 }
