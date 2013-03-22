@@ -74,17 +74,22 @@
 #footer_area{clear:both;
   min-height:5px;
   width:100%;
-  background:red;
+  background:black;
+  color:white;
   position:relative;
   float:left;
-  div{width:340px;
-    display:inline-block;
+  div{width:220px;
+    display:inline-block;    
     }
-  div.col1{background:#333;
-    float:left;	
+  div.col1{//background:#333;
+    float:left;      
+    margin-left:20px;
     }
-  div.col2{background:#555;
-    float:left;	
+  div.col2{//background:#555;
+    
+    margin-left:20px;
+    span{line-height:70px;}
+    img{float:right}
     }
   div.col3{background:#777;
     float:right;
