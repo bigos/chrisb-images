@@ -95,8 +95,13 @@
     width:520px;;
     float:right;
     ul{padding-left:0px;
-      margin-right:1em;}
+      margin-right:1em;
+        }
     li{padding-left:1em;
-      list-style-type:none;}  
+      list-style-type:none;
+        p{font-size:0.75em;
+          }
+        }  
     }
+    div.time{}
 }

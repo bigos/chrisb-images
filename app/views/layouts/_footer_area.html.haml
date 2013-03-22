@@ -25,5 +25,7 @@
     %h3 Latest Blog
     %ul
       - @posts.each do |post|
-        %lI
+        %li
+          %div.time
+            %strong= (time_ago_in_words(post.created_at).gsub('about','') + ' ago')
           = raw post.teaser
