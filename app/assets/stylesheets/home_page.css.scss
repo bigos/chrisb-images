@@ -78,30 +78,32 @@
   color:white;
   position:relative;
   float:left;
-  div{width:160px;
+  div{width:145px;
     display:inline-block;    
     }
   div.col1{//background:#333;
     width:260px;
     float:left;
-    p{  line-height:20px;}
+    p{line-height:27px;
+      font-size:12px;
+      }
     margin-left:20px;
     }
-  div.col2{//background:#555;
-    width:160px;
-    margin-left:70px;
-    span{line-height:70px;}
+  div.col2{width:150px;
+    margin-left:60px;
+    span{line-height:72px;
+      font-size:16px;}
     img{float:right}
     }
   div.col3{//background:#777;
-    width:440px;;
+    width:475px;;
     float:right;
     ul{padding-left:0px;
       margin-right:1em;
         }
     li{padding-left:0em;
       list-style-type:none;
-        p{font-size:0.75em;
+        p{font-size:12px;
           }
         }  
     }
