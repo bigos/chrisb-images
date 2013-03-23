@@ -13,14 +13,20 @@
   %div{class: 'col2'}
     %h3 Follow Me On:  
     %div
-      %span Flickr
-      = image_tag 'flickr.png'  
+      = link_to "http://www.flickr.com/people/56587968@N08/", class: 'footer_social', target: '_blank' do
+        %div
+          %span Flickr
+          = image_tag 'flickr.png'
     %div
-      %span Facebook
-      = image_tag 'facebook.png'
-    %div  
-      %span Twitter
-      = image_tag 'twitter.png'
+      = link_to "https://www.google.com/search?q=Chris+Beard+-+Images%27#sclient=psy-ab&q=Chris+Beard+-+Images+facebook&oq=Chris+Beard+-+Images+facebook&gs_l=serp.12...0.0.2.100860.0.0.0.0.0.0.0.0..0.0...0.0...1c..7.psy-ab.UD-Yp2AGPnw&pbx=1&bav=on.2,or.r_cp.r_qf.&bvm=bv.44158598,d.d2k&fp=c69a1af87de56e9b&biw=1280&bih=857", class: 'footer_social', target: '_blank' do
+        %div
+          %span Facebook
+          = image_tag 'facebook.png'
+    %div
+      = link_to "https://twitter.com/CB1mages", class: 'footer_social', target: '_blank' do
+        %div
+          %span Twitter
+          = image_tag 'twitter.png'
   %div{class: 'col3'}
     %h3 Latest Blog
     %ul
