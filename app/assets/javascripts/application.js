@@ -14,3 +14,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function slideShow() {
+    var s=0;
+    max_slides = 5
+    interval = 5000;
+    setInterval( function(){
+	pos =  (s++ % max_slides) + 1;
+	nextpos =  (s % max_slides) + 1;
+	console.log(pos+'   '+nextpos)
+	$('#slide_'+pos).fadeOut();
+	$('#slide_'+nextpos).fadeIn();
+    }, interval);
+}
+
+$(document).ready(function(){
+    slideShow();    
+});

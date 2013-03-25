@@ -125,3 +125,13 @@ a.teaser:hover{
 	p{background: $black-highlight;}
 	}
 a.teaser:visited{color:white;}
+
+// slideshow
+
+#image_container{height:500px;
+	overflow:hidden;
+	.slide{display:none;
+	margin:0px;
+	p{margin:0.25em;}}
+	.slide:first-child{display:block;}
+	}

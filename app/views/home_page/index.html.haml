@@ -1,7 +1,11 @@
 
 #col1
   #image_container
-    = raw editable_content("big_photo")
+    - @slides.each do |slide|
+      %div{:id=>"slide_#{slide.position}", :class=>'slide'}
+        = image_tag slide.photo.url
+        %p.caption
+          = slide.caption
 
 #col3
   #col3a
