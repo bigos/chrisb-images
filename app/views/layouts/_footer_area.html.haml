@@ -34,4 +34,4 @@
         %li
           %div.time
             %strong= (time_ago_in_words(post.created_at).gsub('about','') + ' ago')
-          = raw post.teaser
+          = link_to( raw(post.teaser), post, :class=>'teaser')

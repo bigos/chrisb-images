@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
+$black-highlight: #222;
   
 #col1{//border:solid red 1px;
   min-height:100px;
@@ -115,5 +115,13 @@ a.footer_social{text-decoration:none;
     }
   }
 a.footer_social:hover{color:green;
-  background:#111;
+  background:$black_highlight;
     }  
+a.teaser{text-decoration:none;
+	fornt-size:12px;
+	color:white;
+	}
+a.teaser:hover{
+	p{background: $black-highlight;}
+	}
+a.teaser:visited{color:white;}
