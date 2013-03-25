@@ -2,21 +2,29 @@
 
 %table
   %tr
-    %th Caption
     %th Position
-    %th Visible
+    %th Add
+    %th Thumbnail
+
+    %th Caption
+
     %th
     %th
     %th
 
   - @slides.each do |slide|
     %tr
-      %td= slide.caption
       %td= slide.position
-      %td= slide.visible
+      %td
+        - if slide.visible
+          v
+        - else
+          x
+      %td= image_tag slide.photo.url(:thumb)
+      %td= slide.caption
       %td= link_to 'Show', slide
       %td= link_to 'Edit', edit_slide_path(slide)
-      %td= link_to 'Destroy', slide, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Delete', slide, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
