@@ -128,10 +128,13 @@ a.teaser:visited{color:white;}
 
 // slideshow
 
-#image_container{height:500px;
+#image_container{height:480px;	
 	overflow:hidden;
 	.slide{display:none;
-	margin:0px;
-	p{margin:0.25em;}}
+          margin:0px;
+          padding:0px;
+          p{margin:0.25em;
+            }
+          }
 	.slide:first-child{display:block;}
 	}
