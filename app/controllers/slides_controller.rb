@@ -2,7 +2,7 @@ class SlidesController < ApplicationController
   # GET /slides
   # GET /slides.json
   def index
-    @slides = Slide.all
+    @slides = Slide.find( :all, :order => "visible DESC, position ASC")
 
     respond_to do |format|
       format.html # index.html.erb

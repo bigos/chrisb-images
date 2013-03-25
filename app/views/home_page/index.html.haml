@@ -1,8 +1,10 @@
 
 #col1
-  #image_container
+  %div{:id=>:image_container, :data => {:slidecount => @slides.count}}
+    - position = 1
     - @slides.each do |slide|
-      %div{:id=>"slide_#{slide.position}", :class=>'slide'}
+      %div{:id=>"slide_#{position}", :class=>'slide'}
+        - position += 1
         = image_tag slide.photo.url
         %p.caption
           = slide.caption

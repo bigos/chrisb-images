@@ -17,7 +17,7 @@
 
 function slideShow() {
     var s=0;
-    max_slides = 5
+    max_slides = $('#image_container').data('slidecount');
     interval = 5000;
     setInterval( function(){
 	pos =  (s++ % max_slides) + 1;
