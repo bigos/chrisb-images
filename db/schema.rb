@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321141105) do
+ActiveRecord::Schema.define(:version => 20130325180809) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -49,6 +49,18 @@ ActiveRecord::Schema.define(:version => 20130321141105) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.text     "teaser"
+  end
+
+  create_table "slides", :force => true do |t|
+    t.string   "caption"
+    t.integer  "position"
+    t.boolean  "visible"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "user_sessions", :force => true do |t|

@@ -1,5 +1,8 @@
 ChrisbImages::Application.routes.draw do
   
+  resources :slides
+
+
   resources :password_resets, :only => [ :new, :create, :edit, :update ]
   
   resources :editables
