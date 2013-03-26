@@ -2,94 +2,32 @@
 #menu
   %ul
     %li
-      %a{:href => "#"} HOME PAGE
-      %ul
-        %li
-          %a{:href => "#"} Has Submenu
-          %ul
-            %li
-              %a{:href => "#"} Has Submenu
-              %ul
-                %li
-                  %a{:href => "#"} Submenu 1
-                %li
-                  %a{:href => "#"} Submenu 2
-                %li
-                  %a{:href => "#"} Submenu 3
-                %li
-                  %a{:href => "#"} Submenu 4
-            %li
-              %a{:href => "#"} Submenu 2
-            %li
-              %a{:href => "#"} Has Submenu
-              %ul
-                %li
-                  %a{:href => "#"} Submenu 1
-                %li
-                  %a{:href => "#"} Submenu 2
-                %li
-                  %a{:href => "#"} Submenu 3
-                %li
-                  %a{:href => "#"} Submenu 4
-            %li
-              %a{:href => "#"} Submenu 4
-        %li
-          %a{:href => "#"} Submenu 2
-        %li
-          %a{:href => "#"} Has Submenu
-          %ul
-            %li
-              %a{:href => "#"} Has Submenu
-              %ul
-                %li
-                  %a{:href => "#"} Submenu 1
-                %li
-                  %a{:href => "#"} Submenu 2
-                %li
-                  %a{:href => "#"} Submenu 3
-                %li
-                  %a{:href => "#"} Submenu 4
-            %li
-              %a{:href => "#"} Submenu 2
-            %li
-              %a{:href => "#"} Has Submenu
-              %ul
-                %li
-                  %a{:href => "#"} Submenu 1
-                %li
-                  %a{:href => "#"} Submenu 2
-                %li
-                  %a{:href => "#"} Submenu 3
-                %li
-                  %a{:href => "#"} Submenu 4
-            %li
-              %a{:href => "#"} Submenu 4
-        %li
-          %a{:href => "#"} Submenu 4
+      = link_to 'HOME', root_url
     %li
       %a{:href => "#"} ABOUT ME
       %ul
         %li
-          %a{:href => "#"} Submenu 1
+          %a{:href => "#"} Equipment
         %li
-          %a{:href => "#"} Submenu 2
-        %li
-          %a{:href => "#"} Submenu 3
-        %li
-          %a{:href => "#"} Submenu 4
+          %a{:href => "#"} Work
     %li
       %a{:href => "#"} WORKSHOPS
-    %li
-      %a{:href => "#"} PERSONAL TUITION
       %ul
         %li
-          %a{:href => "#"} Submenu 1
+          = link_to '5 Day Workshops', editables_path
+          %ul
+            %li
+              = link_to 'Isle of Skye', root_url
         %li
-          %a{:href => "#"} Submenu 2
+          = link_to '3 Day Workshops', editables_path
         %li
-          %a{:href => "#"} Submenu 3
+          = link_to 'Weekend Workshops', editables_path          
         %li
-          %a{:href => "#"} Submenu 4
+          = link_to 'editables', editables_path
+        %li
+          = link_to 'slides', slides_path          
+    %li
+      %a{:href => "#"} PERSONAL TUITION 
     %li
       %a{:href => "#"} TALKS
     %li
