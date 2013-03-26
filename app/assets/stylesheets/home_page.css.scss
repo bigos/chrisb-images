@@ -155,5 +155,9 @@ a.teaser:visited{color:white;}
           p{margin:0.25em;
             }
           }
-	.slide:first-child{display:block;}
+	.slide:first-child{display:block;
+	img{position:absolute;
+          z-index:1;
+          }		
 	}
+          }
