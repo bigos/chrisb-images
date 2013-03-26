@@ -83,6 +83,7 @@ $black-highlight: #222;
   div{width:145px;
     display:inline-block;
     h3{font-size:16px;
+      color:white;
       font-weight:bold;
       padding-bottom:10px;
       }
@@ -145,7 +146,7 @@ a.teaser:visited{color:white;}
 
 // slideshow
 
-#image_container{height:480px;	
+#image_container{height:530px;	
 	overflow:hidden;
 	.slide{display:none;
           margin:0px;
