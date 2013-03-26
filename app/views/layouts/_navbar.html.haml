@@ -1,4 +1,129 @@
+%ul.menu  
+  %li= link_to 'HOME PAGE', root_url
+  %li
+    = link_to 'ABOUT ME', root_url
+    %ul.submenu
+      %li= link_to 'Equipment', posts_path
+      %li= link_to 'Work', posts_path
+  
+  %li
+    = link_to 'WORKSHOPS', root_url
+    %ul.submenu
+      %li= link_to '5 Day Workshops', posts_path
+      %ul.submenu
+        %li= link_to 'Isle of Skye 5-18 April 2013', posts_path
+      %li= link_to '3 Day Workshops', posts_path
+      %li= link_to 'Weekend  Workshops', posts_path
+      %li= link_to 'Blog', posts_path
+      %li= link_to 'Editables', editables_path
+      %li= link_to 'Slides', slides_path
+  %li= link_to 'PERSONAL TUITION', root_url
+  %li= link_to 'TALKS', root_url
+  %li= link_to 'GALLERIES', root_url
+  %li= link_to 'NEWS', root_url
+  %li= link_to 'CONTACT', root_url
 
-= link_to 'Blog', posts_path
-= link_to 'Editables', editables_path
-= link_to 'Slides', slides_path
+
+
+
+#menu
+  %ul
+    %li
+      %a{:href => "#"} HOME PAGE
+      %ul
+        %li
+          %a{:href => "#"} Has Submenu
+          %ul
+            %li
+              %a{:href => "#"} Has Submenu
+              %ul
+                %li
+                  %a{:href => "#"} Submenu 1
+                %li
+                  %a{:href => "#"} Submenu 2
+                %li
+                  %a{:href => "#"} Submenu 3
+                %li
+                  %a{:href => "#"} Submenu 4
+            %li
+              %a{:href => "#"} Submenu 2
+            %li
+              %a{:href => "#"} Has Submenu
+              %ul
+                %li
+                  %a{:href => "#"} Submenu 1
+                %li
+                  %a{:href => "#"} Submenu 2
+                %li
+                  %a{:href => "#"} Submenu 3
+                %li
+                  %a{:href => "#"} Submenu 4
+            %li
+              %a{:href => "#"} Submenu 4
+        %li
+          %a{:href => "#"} Submenu 2
+        %li
+          %a{:href => "#"} Has Submenu
+          %ul
+            %li
+              %a{:href => "#"} Has Submenu
+              %ul
+                %li
+                  %a{:href => "#"} Submenu 1
+                %li
+                  %a{:href => "#"} Submenu 2
+                %li
+                  %a{:href => "#"} Submenu 3
+                %li
+                  %a{:href => "#"} Submenu 4
+            %li
+              %a{:href => "#"} Submenu 2
+            %li
+              %a{:href => "#"} Has Submenu
+              %ul
+                %li
+                  %a{:href => "#"} Submenu 1
+                %li
+                  %a{:href => "#"} Submenu 2
+                %li
+                  %a{:href => "#"} Submenu 3
+                %li
+                  %a{:href => "#"} Submenu 4
+            %li
+              %a{:href => "#"} Submenu 4
+        %li
+          %a{:href => "#"} Submenu 4
+    %li
+      %a{:href => "#"} ABOUT ME
+      %ul
+        %li
+          %a{:href => "#"} Submenu 1
+        %li
+          %a{:href => "#"} Submenu 2
+        %li
+          %a{:href => "#"} Submenu 3
+        %li
+          %a{:href => "#"} Submenu 4
+    %li
+      %a{:href => "#"} WORKSHOPS
+    %li
+      %a{:href => "#"} PERSONAL TUITION
+      %ul
+        %li
+          %a{:href => "#"} Submenu 1
+        %li
+          %a{:href => "#"} Submenu 2
+        %li
+          %a{:href => "#"} Submenu 3
+        %li
+          %a{:href => "#"} Submenu 4
+    %li
+      %a{:href => "#"} TALKS
+    %li
+      %a{:href => "#"} GALLERIES
+    %li
+      %a{:href => "#"} NEWS
+    %li
+      %a{:href => "#"} CONTACT
+
+%p &nbsp;      
