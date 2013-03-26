@@ -3,6 +3,7 @@
 %table
   %tr
     %th Position
+    %th Move
     %th Add
     %th Thumbnail
 
@@ -15,6 +16,10 @@
   - @slides.each do |slide|
     %tr
       %td= slide.position
+      %td
+        - if slide.position
+          = link_to "up", slides_path({:up => slide.position})
+          = link_to "down", slides_path({:down => slide.position})
       %td
         = link_to (check_box_tag 'visible','yes', slide.visible ? true: false ), slides_path(params.merge({:toggle_activation => slide.id}))
       %td= image_tag slide.photo.url(:thumb)
