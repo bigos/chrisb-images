@@ -43,14 +43,17 @@ div#login a {
 }
   
 *{margin: 0; padding: 0;}
+#menu-wrapper{height:40px;}  
 #menu{width:100%; margin: 0 auto; background-color: #000; height:40px;}
 #menu ul{list-style-type:none;}
-#menu ul li{float: left; position: relative;}
+#menu ul li{float: left; position: relative; }
 #menu ul li:hover{background-color: #999;}
-#menu ul li a{color: #fff; padding: 6px 30px; line-height:25px; font-size:12px; font-family:arial; display: block; text-decoration:none;}
+#menu ul li a{color: #fff; padding: 0px 30px; line-height:40px; font-size:12px; font-family:arial; display: block; text-decoration:none;}
 #menu ul li a:hover{background-color: #999;}
 #menu ul li ul li{float: none; position: relative; }
-#menu ul li ul{position: absolute; top:25px; left:0; display: none; background-color: #000; width:150px; z-index:99;}
+#menu ul li ul{position: absolute; top:25px; left:0; display: none; background-color: #000; width:150px; z-index:99; margin-top:14px;}
+#menu ul li ul li ul{margin-top:0px;}
+#menu ul li ul li ul li{background:#333;}  
 #menu ul li:hover > ul{display: block;}
 #menu ul li ul li a{white-space: nowrap; line-height:30px;}
 #menu ul li ul li ul{position: absolute; top:0; left:145px; display: none; background-color: #000; width:150px;}
