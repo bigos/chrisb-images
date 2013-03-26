@@ -151,7 +151,8 @@ a.teaser:visited{color:white;}
 	.slide{display:none;
           margin:0px;
           padding:0px;
-          p{margin:0.25em;
+          p{margin:0.25em auto 0px;
+            width:950px;
             clear:both;
             }
           }
