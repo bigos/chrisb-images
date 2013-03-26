@@ -152,11 +152,10 @@ a.teaser:visited{color:white;}
           margin:0px;
           padding:0px;
           p{margin:0.25em;
+            clear:both;
             }
           }
 	.slide:first-child{display:block;
-	img{position:absolute;
-          z-index:1;
-          }		
+		
 	}
           }
