@@ -16,10 +16,7 @@
     %tr
       %td= slide.position
       %td
-        - if slide.visible
-          v
-        - else
-          x
+        = link_to (check_box_tag 'visible','yes', slide.visible ? true: false ), slides_path(params.merge({:toggle_activation => slide.id}))
       %td= image_tag slide.photo.url(:thumb)
       %td= slide.caption
       %td= link_to 'Show', slide

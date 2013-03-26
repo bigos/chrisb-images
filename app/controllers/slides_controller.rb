@@ -2,7 +2,16 @@ class SlidesController < ApplicationController
   # GET /slides
   # GET /slides.json
   def index
+    logger.info params.inspect
+    if params[:toggle_activation]
+      slide = Slide.where(:id => params[:toggle_activation]).first
+      logger.info slide
+      slide.toggle :visible
+      slide.save
+    end
+
     @slides = Slide.find( :all, :order => "visible DESC, position ASC")
+    
 
     respond_to do |format|
       format.html # index.html.erb
