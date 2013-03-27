@@ -1,6 +1,10 @@
 
 - if params[:section] == 'work'
   = raw editable_content("about_me_work")
+- elsif  params[:section] == 'personal_tuition'
+  = raw editable_content("personal_tuition")
+- elsif  params[:section] == 'talks'
+  = raw editable_content("talks")
 - else
   = raw editable_content("about_me_equipment")
 
