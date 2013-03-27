@@ -54,3 +54,5 @@ end
 group :test do
   gem 'cucumber-rails'      
 end
+
+gem 'jquery_datepicker'
