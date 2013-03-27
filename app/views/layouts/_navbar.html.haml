@@ -14,21 +14,21 @@
       = link_to 'WORKSHOPS', workshops_path
       %ul
         %li
-          = link_to '5 Day Workshops', '/photo_workshops/5_day'
+          = link_to '5 Day Workshops', '/photo_workshops/5/days'
           %ul
-            - Workshop.where(:duration => '5 day').each do |workshop|
+            - Workshop.where(:duration => '5').each do |workshop|
               %li
                 = link_to workshop.title, workshop
         %li
-          = link_to '3 Day Workshops', '/photo_workshops/3_day'
+          = link_to '3 Day Workshops', '/photo_workshops/3/days'
           %ul
-            - Workshop.where(:duration => '3 day').each do |workshop|
+            - Workshop.where(:duration => '3').each do |workshop|
               %li
                 = link_to workshop.title, workshop          
         %li
-          = link_to 'Weekend Workshops', '/photo_workshops/weekend'
+          = link_to 'Weekend Workshops', '/photo_workshops/2/days'
           %ul
-            - Workshop.where(:duration => 'weekend').each do |workshop|
+            - Workshop.where(:duration => '2').each do |workshop|
               %li
                 = link_to workshop.title, workshop          
         %li

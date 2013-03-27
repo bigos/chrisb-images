@@ -3,7 +3,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops.json
   def index
     if params[:duration]
-      @workshops = Workshop.where(:duration => params[:duration].gsub('_',' '))
+      @workshops = Workshop.where(:duration => params[:duration])
     else
       @workshops = Workshop.all
     end
