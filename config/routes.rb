@@ -1,5 +1,7 @@
 ChrisbImages::Application.routes.draw do
   
+  match "about_me/:section" => 'about_me#index'
+
   resources :slides
 
 
