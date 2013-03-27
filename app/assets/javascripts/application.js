@@ -18,6 +18,15 @@
 
 
 
+
+$(function() {
+    $( "#workshop_start_date" ).datepicker({
+	dateFormat: "dd/MM/yy",
+	firstDay: 1
+    });
+});
+
+
 function slideShow() {
     var s=0;
     max_slides = $('#image_container').data('slidecount');
