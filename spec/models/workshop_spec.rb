@@ -23,12 +23,12 @@ describe Workshop do
     FactoryGirl.build(:workshop, duration: 'weekend').should_not be_valid
   end
   it "is valid with duration - weekend" do
-    FactoryGirl.build(:workshop, duration: '2').should be_valid
+    FactoryGirl.build(:workshop, duration: 2).should be_valid
   end
   it "is valid with duration - 3 day" do
-    FactoryGirl.build(:workshop, duration: '3').should be_valid
+    FactoryGirl.build(:workshop, duration: 3).should be_valid
   end
   it "is valid with duration - 5 day" do
-    FactoryGirl.build(:workshop, duration: '5').should be_valid
+    FactoryGirl.build(:workshop, duration: 5).should be_valid
   end
 end
