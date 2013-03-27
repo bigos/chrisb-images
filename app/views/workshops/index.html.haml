@@ -2,7 +2,7 @@
 
 %table
   %tr
-    %th Type
+    %th Duration
     %th Title
     %th Teaser
     %th Content
@@ -12,7 +12,7 @@
 
   - @workshops.each do |workshop|
     %tr
-      %td= workshop.type
+      %td= workshop.duration
       %td= workshop.title
       %td= workshop.teaser
       %td= workshop.content

@@ -7,8 +7,8 @@
           %li= msg
 
   .field
-    = f.label :type
-    = f.select :type, Workshop::TYPE_OPTIONS, :prompt => 'select'
+    = f.label :duration
+    = f.select :duration, Workshop::DURATION_OPTIONS, :prompt => 'select'
   .field
     = f.label :title
     = f.text_field :title
