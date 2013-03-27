@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+
+# locale for Brittain  
+"en-GB":
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d %b"
+      long: "%d %B, %Y"

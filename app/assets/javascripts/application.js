@@ -13,7 +13,10 @@
 //= require ckeditor/init
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree .
+
+
 
 function slideShow() {
     var s=0;
