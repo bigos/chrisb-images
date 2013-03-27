@@ -3,15 +3,13 @@
 %p
   %b Type:
   = @workshop.duration
-%p
-  %b Title:
+%h1
   = @workshop.title
 %p
   %b Teaser:
   = @workshop.teaser
 %p
-  %b Content:
-  = @workshop.content
+  = raw @workshop.content
 
 = link_to 'Edit', edit_workshop_path(@workshop)
 \|

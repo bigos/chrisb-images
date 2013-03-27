@@ -1,24 +1,13 @@
-%h1 Listing workshops
 
-%table
-  %tr
-    %th Duration
-    %th Title
-    %th Teaser
-    %th Content
-    %th
-    %th
-    %th
-
-  - @workshops.each do |workshop|
-    %tr
-      %td= workshop.duration
-      %td= workshop.title
-      %td= workshop.teaser
-      %td= workshop.content
-      %td= link_to 'Show', workshop
-      %td= link_to 'Edit', edit_workshop_path(workshop)
-      %td= link_to 'Destroy', workshop, :method => :delete, :data => { :confirm => 'Are you sure?' }
+- @workshops.each do |workshop|
+  %div.workshop
+    %h2= workshop.title
+    = workshop.duration
+    = workshop.teaser
+    = raw workshop.content
+    = link_to 'Show', workshop
+    = link_to 'Edit', edit_workshop_path(workshop)
+    = link_to 'Destroy', workshop, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
