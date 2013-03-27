@@ -11,17 +11,26 @@
         %li
           %a{:href => "/about_me/work"} Work
     %li
-      %a{:href => "#"} WORKSHOPS
+      = link_to 'WORKSHOPS', workshops_path
       %ul
         %li
-          = link_to '5 Day Workshops', editables_path
+          = link_to '5 Day Workshops', '/photo_workshops/5_day'
           %ul
-            %li
-              = link_to 'Isle of Skye', root_url
+            - Workshop.where(:duration => '5 day').each do |workshop|
+              %li
+                = link_to workshop.title, workshop
         %li
-          = link_to '3 Day Workshops', editables_path
+          = link_to '3 Day Workshops', '/photo_workshops/3_day'
+          %ul
+            - Workshop.where(:duration => '3 day').each do |workshop|
+              %li
+                = link_to workshop.title, workshop          
         %li
-          = link_to 'Weekend Workshops', editables_path          
+          = link_to 'Weekend Workshops', '/photo_workshops/weekend'
+          %ul
+            - Workshop.where(:duration => 'weekend').each do |workshop|
+              %li
+                = link_to workshop.title, workshop          
         %li
           = link_to 'editables', editables_path
         %li

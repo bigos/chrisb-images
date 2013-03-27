@@ -2,7 +2,11 @@ class WorkshopsController < ApplicationController
   # GET /workshops
   # GET /workshops.json
   def index
-    @workshops = Workshop.all
+    if params[:duration]
+      @workshops = Workshop.where(:duration => params[:duration].gsub('_',' '))
+    else
+      @workshops = Workshop.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
