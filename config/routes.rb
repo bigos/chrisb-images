@@ -1,5 +1,7 @@
 ChrisbImages::Application.routes.draw do
   
+  get "workshop_information/show"
+
   match "/photo_workshops/:duration/days" => 'workshops#index'
   resources :workshops
 
