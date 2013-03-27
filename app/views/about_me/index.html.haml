@@ -5,7 +5,7 @@
   = raw editable_content("personal_tuition")
 - elsif  params[:section] == 'talks'
   = raw editable_content("talks")
-- else
+- elsif params[:section] == 'equipment'
   = raw editable_content("about_me_equipment")
-
-  
+- else
+  = raw editable_content("about_me")
