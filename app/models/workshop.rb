@@ -1,7 +1,7 @@
 class Workshop < ActiveRecord::Base
-  attr_accessible :content, :teaser, :title, :type
-  validates_presence_of  :content, :teaser, :title, :type
+  attr_accessible :content, :teaser, :title, :duration
+  validates_presence_of  :content, :teaser, :title, :duration
   
-  TYPE_OPTIONS =  ['weekend', '3 day', '5 day']
-  validates :type, :inclusion => { :in =>  TYPE_OPTIONS, :message => "%{value} is not a valid option" }
+  DURATION_OPTIONS =  ['weekend', '3 day', '5 day']
+  validates :duration, :inclusion => { :in =>  DURATION_OPTIONS, :message => "%{value} is not a valid option" }
 end
