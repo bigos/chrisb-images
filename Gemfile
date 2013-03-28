@@ -56,3 +56,4 @@ group :test do
 end
 
 gem 'jquery_datepicker'
+gem "jquery-fileupload-rails"
