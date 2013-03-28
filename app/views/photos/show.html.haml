@@ -3,6 +3,7 @@
 %p
   %b Attachment file name:
   = @photo.attachment_file_name
+  = image_tag @photo.attachment.url
 %p
   %b Attachment content type:
   = @photo.attachment_content_type
