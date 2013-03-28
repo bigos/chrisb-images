@@ -6,7 +6,7 @@ class Workshop < ActiveRecord::Base
   validates :duration, :inclusion => { :in => DURATION_OPTIONS.values, :message => "%{value} is not a valid workshop duration" }
 
   def date_range
-    finish = self.start_date + self.duration.days
+    finish = self.start_date + (self.duration.days-1)
     ord_start  = self.start_date.day.ordinalize
     ord_finish = finish.day.ordinalize
     "#{ord_start} #{self.start_date.strftime(" %b")} to #{ord_finish} #{finish.strftime("%b/%Y")}"    

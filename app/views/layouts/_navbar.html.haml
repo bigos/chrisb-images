@@ -13,18 +13,18 @@
         %li
           = link_to '5 Day Workshops', '/photo_workshops/5/days'
           %ul
-            - Workshop.where(:duration => '5').each do |workshop|
-              %li= link_to workshop.title, workshop
+            - Workshop.where(:duration => '5').order(:start_date).each do |workshop|
+              %li= link_to (workshop.date_range + ' ' + workshop.title), workshop
         %li
           = link_to '3 Day Workshops', '/photo_workshops/3/days'
           %ul
-            - Workshop.where(:duration => '3').each do |workshop|
-              %li= link_to workshop.title, workshop          
+            - Workshop.where(:duration => '3').order(:start_date).each do |workshop|
+              %li= link_to (workshop.date_range + ' ' + workshop.title), workshop          
         %li
           = link_to 'Weekend Workshops', '/photo_workshops/2/days'
           %ul
-            - Workshop.where(:duration => '2').each do |workshop|
-              %li= link_to workshop.title, workshop          
+            - Workshop.where(:duration => '2').order(:start_date).each do |workshop|
+              %li= link_to (workshop.date_range + ' ' + workshop.title), workshop          
         %li= link_to 'editables', editables_path
         %li= link_to 'slides', slides_path          
     %li= link_to 'PERSONAL TUITION', "/about_me/personal_tuition"

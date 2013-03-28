@@ -3,9 +3,9 @@ class WorkshopsController < ApplicationController
   # GET /workshops.json
   def index
     if params[:duration]
-      @workshops = Workshop.where(:duration => params[:duration])
+      @workshops = Workshop.where(:duration => params[:duration]).order(:start_date)
     else
-      @workshops = Workshop.all
+      @workshops = Workshop.find(:all, :order => "start_date")
     end
 
     respond_to do |format|
