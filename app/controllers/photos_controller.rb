@@ -44,12 +44,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.html { 
-          render :json => [@photo.to_jq_attachment].to_json,
-          :content_type => 'text/html',
-          :layout => false
-
-          #redirect_to @photo, notice: 'Photo was successfully created.' 
+        format.html { redirect_to photos_path, notice: 'Photo was successfully created.' 
         }
         format.json { render json: @photo.to_jq_upload, status: :created, location: @photo }
       else
