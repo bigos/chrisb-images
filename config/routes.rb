@@ -1,5 +1,9 @@
 ChrisbImages::Application.routes.draw do
   
+  get "bulk_upload/new"
+
+  get "bulk_upload/create"
+
   resources :photos
 
 
