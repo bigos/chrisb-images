@@ -2,6 +2,8 @@ class Slide < ActiveRecord::Base
   attr_accessible :caption, :position, :visible, :photo
   has_attached_file :photo, :styles => { :thumb => "190x90>" }
 
+  validates_presence_of :caption
+
   def reorder_positions!
     slides= Slide.where(:visible => true).order :position
     pos = 0
