@@ -28,10 +28,7 @@
 
 .container
   %h2 Upload some images
-  %p
-    and
-    = link_to 'refresh', photos_path
-    the page when done
+  %p after refreshing the page, uploaded images will be visible on the website
     
   = form_for Photo.new, :html => { :multipart => true, :id => "fileupload"  } do |f|
     / The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload
@@ -44,14 +41,14 @@
           = f.file_field :attachment
         %button.btn.btn-primary.start{:type => "submit"}
           %i.icon-upload.icon-white
-          %span Start upload
-        %button.btn.btn-warning.cancel{:type => "reset"}
+          %span Upload
+        %button.btn.btn-warning.cancel{:type => "reset", :style=>"display:none;"}
           %i.icon-ban-circle.icon-white
           %span Cancel upload
-        %button.btn.btn-danger.delete{:type => "button"}
+        %button.btn.btn-danger.delete{:type => "button",:style => "Display:none;"}
           %i.icon-trash.icon-white
           %span Delete
-        %input.toggle{:type => "checkbox"}/
+        %input.toggle{:type => "checkbox", :style=> "display:none;"}/
       .span5
         / The global progress bar
         .progress.progress-success.progress-striped.active.fade
