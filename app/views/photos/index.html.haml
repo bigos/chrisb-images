@@ -12,7 +12,7 @@
 
   - @photos.each do |photo|
     %tr
-      %td= photo.attachment_file_name
+      %td= image_tag photo.attachment.url(:thumb)
       %td= photo.attachment_content_type
       %td= photo.attachment_file_size
       %td= photo.attachment_updated_at
@@ -22,12 +22,17 @@
 
 %br
 
-= link_to 'New Photo', new_photo_path
+=# link_to 'New Photo', new_photo_path
 
 -#----------------------------------------------------------------------------------------------
 
 .container
-  %h2 Upload file
+  %h2 Upload some images
+  %p
+    and
+    = link_to 'refresh', photos_path
+    the page when done
+    
   = form_for Photo.new, :html => { :multipart => true, :id => "fileupload"  } do |f|
     / The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload
     .row.fileupload-buttonbar
