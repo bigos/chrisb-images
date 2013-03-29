@@ -9,7 +9,7 @@
   %h2 Upload some images
   %p after refreshing the page, uploaded images will be visible on the website
     
-  = form_for Photo.new, :html => { :multipart => true, :id => "fileupload"  } do |f|
+  = form_for Photo.new, :html => {:url => "/bulk_upload/create",  :multipart => true, :id => "fileupload"  } do |f|
     / The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload
     .row.fileupload-buttonbar
       .span7

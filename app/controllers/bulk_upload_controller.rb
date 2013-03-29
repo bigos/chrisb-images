@@ -10,7 +10,7 @@ class BulkUploadController < ApplicationController
 
   def create
     @photo = Photo.new(params[:photo])
-
+    2/0
     respond_to do |format|
       if @photo.save
         format.html { render :json => [@photo.to_jq_upload].to_json, 
