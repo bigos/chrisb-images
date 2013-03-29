@@ -9,6 +9,7 @@ class Photo < ActiveRecord::Base
       "name" => read_attribute(:attachment_file_name),
       "size" => read_attribute(:attachment_file_size),
       "url" => attachment.url(:original),
+      "thumbnail_url" => attachment.url(:thumb),
       "delete_url" => "/photos/#{self.id}",
       "delete_type" => "DELETE" 
     }
