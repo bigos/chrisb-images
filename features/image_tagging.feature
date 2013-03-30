@@ -23,6 +23,6 @@ Feature: Image Tagging Feature
       And tag count of photo "bird.jpg" should be "1"
 
     Scenario: Adding new tag
-      When I tag "bird.jpg" as "black and white"
-      Then  the photo "bird.jpg" should include tag "black and white"
+      When I tag "bird-bw.jpg" as "black and white"
+      Then  the photo "bird-bw.jpg" should include tag "black and white"
       And tag count should be "4"
