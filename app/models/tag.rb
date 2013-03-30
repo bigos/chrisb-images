@@ -4,5 +4,5 @@ class Tag < ActiveRecord::Base
   has_many :taggings
   has_many :photos, :through => :taggings
   
-  validates :name, :presence => true
+  validates :name, :presence => true, :uniqueness => true
 end
