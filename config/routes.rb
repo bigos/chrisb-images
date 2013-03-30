@@ -1,5 +1,19 @@
 ChrisbImages::Application.routes.draw do
   
+  get "tags/index"
+
+  get "tags/show"
+
+  get "tags/new"
+
+  get "tags/edit"
+
+  get "tags/create"
+
+  get "tags/update"
+
+  get "tags/destroy"
+
   resources :tags
 
   resources :photos
