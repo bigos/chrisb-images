@@ -2,6 +2,8 @@ ChrisbImages::Application.routes.draw do
   
   get "bulk_upload/new"
 
+  resources :tags
+
   resources :photos
 
 
