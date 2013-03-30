@@ -5,6 +5,7 @@
     %th Attachment file name
     %th Attachment content type
     %th Attachment file size
+    %th Tags
     %th Attachment updated at
     %th
     %th
@@ -15,6 +16,7 @@
       %td= image_tag photo.attachment.url(:thumb)
       %td= photo.attachment_content_type
       %td= photo.attachment_file_size
+      %td= photo.tags.count
       %td= photo.attachment_updated_at
       %td= link_to 'Show', photo
       %td= link_to 'Edit', edit_photo_path(photo)
