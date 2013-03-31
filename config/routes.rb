@@ -1,5 +1,8 @@
 ChrisbImages::Application.routes.draw do
   
+  resources :contact_messages
+
+
   get "bulk_upload/new"
 
   resources :tags
