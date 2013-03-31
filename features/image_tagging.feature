@@ -33,3 +33,4 @@ Feature: Image Tagging Feature
       And tag count of photo "bird.jpg" should be "1"
       When I remove tag "nature" from photo "bird.jpg"
       Then tag count of photo "bird.jpg" should be "0"
+      And total tag count should be "3"

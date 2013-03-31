@@ -40,3 +40,7 @@ When(/^I remove tag "(.*?)" from photo "(.*?)"$/) do |arg1, arg2|
   photo = Photo.where(:attachment_file_name => arg2).first
   photo.remove_tag arg1
 end
+
+Then(/^total tag count should be "(.*?)"$/) do |arg1|
+  Tag.all.count.should eq(arg1.to_i)
+end

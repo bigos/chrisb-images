@@ -5,11 +5,16 @@
 
 = image_tag @photo.attachment.url(:thumb)
 
-click on link to add tag()
-- Tag.all.each do |t|
-  = link_to t.name, '#'
-  &nbsp;
 
+
+%p
+  - Tag.find(:all, :order=>'name').each do |t|
+    - tagging = Tagging.where(:photo_id=>@photo.id, :tag_id=>t.id).first
+    = link_to (raw t.name+(check_box_tag 'visible','yes', tagging )), edit_photo_path(tagging ? {:remove_tag => t.name} : {:add_tag => t.name})
+        
+
+  
+  
 
 %br
 = link_to 'Show', @photo

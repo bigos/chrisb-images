@@ -36,6 +36,20 @@ class PhotosController < ApplicationController
   # GET /photos/1/edit
   def edit
     @photo = Photo.find(params[:id])
+    if current_user
+      if current_user.username == 'admin'
+        if params[:add_tag]
+          @photo.tag_with params[:add_tag]
+        end
+        if params[:remove_tag]
+          @photo.remove_tag params[:remove_tag]
+        end
+      else
+      flash[:error] = 'Error: Only admin can do that.' 
+      end
+    else
+      flash[:error] = 'Error: You need to log in as admin to do that.' 
+    end
   end
 
   # POST /photos

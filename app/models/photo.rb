@@ -22,7 +22,10 @@ class Photo < ActiveRecord::Base
   def remove_tag(tag_name)
     tags = self.tags
     tags.each do |tag|
-      tag.destroy if tag.name == tag_name
+      if tag.name == tag_name
+        tagging = Tagging.where(:tag_id => tag.id, :photo_id => self.id).first
+        tagging.destroy
+      end
     end
   end
 
