@@ -2,17 +2,17 @@ Given(/^contact messages count is "(.*?)"$/) do |arg1|
   ContactMessage.count.should eq(arg1.to_i)
 end
 
-When(/^I foloow "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
 When(/^fill in contact form with:$/) do |table|
   # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  fill_in('From', :with => table.raw[0][1])
+  fill_in('Subject', :with => table.raw[1][1])
+  fill_in('Message', :with => table.raw[2][1])
 end
 
 
 Then(/^last contact message should be:$/) do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  message = ContactMessage.last
+  message.from.should eq(table.raw[0][1])
+  message.subject.should eq(table.raw[1][1])
+  message.message.should eq(table.raw[2][1])
 end

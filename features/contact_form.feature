@@ -8,14 +8,13 @@ Feature: Contact Form Feature
     Given I am not logged in
     And I am on the homepage
     And contact messages count is "0"
-    When I foloow "CONTACT"
+    When I follow "CONTACT"
     And fill in contact form with:
     | from    | james.bond@example.com |
     | subject | secret message         |
     | text    | code 12345             |
     And I press "Submit"
-    Then I should get email sent to my address
-    And contact messages count is "1"
+    Then contact messages count is "1"
     And last contact message should be:
     | from    | james.bond@example.com |
     | subject | secret message         |

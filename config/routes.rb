@@ -1,7 +1,7 @@
 ChrisbImages::Application.routes.draw do
   
+  match 'contact' => 'contact_messages#new'
   resources :contact_messages
-
 
   get "bulk_upload/new"
 
