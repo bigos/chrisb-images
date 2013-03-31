@@ -26,3 +26,10 @@ Feature: Image Tagging Feature
       When I tag "bird-bw.jpg" as "black and white"
       Then  the photo "bird-bw.jpg" should include tag "black and white"
       And tag count should be "4"
+      
+    Scenario: Removing a tag
+      When I tag "bird.jpg" as "nature"
+      Then  the photo "bird.jpg" should include tag "nature"
+      And tag count of photo "bird.jpg" should be "1"
+      When I remove tag "nature" from photo "bird.jpg"
+      Then tag count of photo "bird.jpg" should be "0"
