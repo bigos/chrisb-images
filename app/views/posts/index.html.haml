@@ -3,8 +3,9 @@
 %h1 Listing posts
 - @posts.each do |post|
   %div{:style=>"border:solid grey 1px; margin-top:1em; padding:0.75em; background:#fafafa;"}
-    %h3
-      = link_to post.title, post
+    %h = link_to post.title, post
+    %p
+      %strong=  post.created_at.strftime("#{post.created_at.day.ordinalize} %b %Y")
     %p= raw post.teaser
     %div{:style=>"clear:both;"}
       = link_to 'Show', post
