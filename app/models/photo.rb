@@ -18,9 +18,18 @@ class Photo < ActiveRecord::Base
     tagging=Tagging.new(photo_id: self.id, tag_id: tag.id)
     tagging.save
   end
+
+  def remove_tag(tag_name)
+    tags = self.tags
+    tags.each do |tag|
+      tag.destroy if tag.name == tag_name
+    end
+  end
+
   def tag_list
     self.tags.collect{|t| t.name}
   end
+
   
   def to_jq_upload
     {
