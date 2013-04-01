@@ -2,16 +2,8 @@
 
 - if current_user
   - if current_user.username == 'admin'
-    %p
-      %b From:
-      = @contact_message.from
-    %p
-      %b Subject:
-      = @contact_message.subject
-    %p
-      %b Message:
-      = @contact_message.message
-
-    = link_to 'Edit', edit_contact_message_path(@contact_message)
-    \|
-    = link_to 'Back', contact_messages_path
+    = render 'show_partial'
+  - else
+    %p Only admin can view it.
+- else
+  %p Only admin can view it.

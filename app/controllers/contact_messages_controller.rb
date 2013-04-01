@@ -1,4 +1,5 @@
 class ContactMessagesController < ApplicationController
+  before_filter :require_admin, :except => [:new, :create, :show]
   # GET /contact_messages
   # GET /contact_messages.json
   def index
