@@ -41,6 +41,15 @@ When(/^I remove tag "(.*?)" from photo "(.*?)"$/) do |arg1, arg2|
   photo.remove_tag arg1
 end
 
+When(/^I destroy photo "(.*?)"$/) do |arg1|
+  photo = Photo.where(:attachment_file_name => arg1).first
+  photo.destroy
+end
+
 Then(/^total tag count should be "(.*?)"$/) do |arg1|
   Tag.all.count.should eq(arg1.to_i)
+end
+
+Then(/^total tagging count should be "(.*?)"$/) do |arg1|
+  Tagging.all.count.should eq(arg1.to_i)
 end
