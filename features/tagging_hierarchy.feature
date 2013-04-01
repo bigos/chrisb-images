@@ -36,3 +36,6 @@ Feature: Tag Hierarchy
     When I put tag "Insects" as a child of "Nature"
     Then Tag "Insects" should have "Nature" as the parent
     And Tag "Nature" should have "Insects" as one of it's children
+    
+  Scenario: Setting self as parent
+    When I try "Insects" to be parent of itself the object should not be valid
