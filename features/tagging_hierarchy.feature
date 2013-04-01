@@ -41,31 +41,48 @@ Feature: Tag Hierarchy
     When I try "Insects" as parent of itself it should not be valid
 
   Scenario: Tagging Manchester Photos
-    When I put tag "Greater Manchester" as a child of "England"
-    And I put tag "City Centre" as a child of "Greater Manchester"
-    And I put tag "Salford Quays" as a child of "Greater Manchester"
-    And I tag "BBC Media Centre.jpg" as "Salford Quays"
-    And I tag "Piccadilly Gardens" as "City Centre"
-    And I tag "Manchester City Lights.jpg" as "City Centre"
+    When I put following tags as children of:
+    | child               | parent             |
+    | Grerater manchester | England            |
+    | City Centre         | Greater Manchester |
+    | Salford Quays       | Greater Manchester |
+    And I tag following photos as:
+    | BBC Media Centre.jpg       | Salford Quays |
+    | Piccadilly Gardens.jpg     | City Centre   |
+    | Manchester City Lights.jpg | City Centre   |
     Then following photos should be tagged as:
     | filename               | tag                |
     | Piccadilly Gardens.jpg | City Centre        |
     | Piccadilly Gardens.jpg | Greater Manchester |
     | Piccadilly Gardens.jpg | England            |
-    And tag "England" should have "3" recursive photos
-    And tag "Greater Manchester" should have "3" recursive photos
-    And tag "City Centre" should have "2" recursive photos
-    And tag "Salford Quays" should have "1" recursive photos 
+    And tags should have following recursive children counts:
+    | England            | 3 |
+    | Greater Manchester | 3 |
+    | City Centre        | 2 |
+    | Salford Quays      | 1 |
 
   Scenario: Untagging Manchester Photos
-    When I put tag "Greater Manchester" as a child of "England"
-    And I put tag "City Centre" as a child of "Greater Manchester"
-    And I put tag "Salford Quays" as a child of "Greater Manchester"
-    And I tag "BBC Media Centre.jpg" as "Salford Quays"
-    And I tag "Piccadilly Gardens" as "City Centre"
-    And I tag "Manchester City Lights.jpg" as "City Centre"
-    When I untag "England"
-    Then tag "England" should have "0" recursive photos
-    And tag "Greater Manchester" should have "0" recursive photos
-    And tag "City Centre" should have "0" recursive photos
-    And tag "Salford Quays" should have "0" recursive photos 
+    When I put following tags as children of:
+    | child               | parent             |
+    | Grerater manchester | England            |
+    | City Centre         | Greater Manchester |
+    | Salford Quays       | Greater Manchester |
+    And I tag following photos as:
+    | BBC Media Centre.jpg       | Salford Quays |
+    | Piccadilly Gardens.jpg     | City Centre   |
+    | Manchester City Lights.jpg | City Centre   |
+    | Manchester City Lightd.jpg | Night         |
+    Then tags should have following recursive children counts:
+    | England            | 3 |
+    | Greater Manchester | 3 |
+    | City Centre        | 2 |
+    | Salford Quays      | 1 |
+    | Night              | 1 |
+    When I remove tag "England" from "Manchester City Lights.jpg"
+    Then tags should have following recursive children counts:
+    | England            | 2 |
+    | Greater Manchester | 2 |
+    | City Centre        | 1 |
+    | Salford Quays      | 1 |
+    | Night              | 1 |
+
