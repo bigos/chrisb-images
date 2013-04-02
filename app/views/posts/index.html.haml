@@ -1,6 +1,6 @@
 = link_to 'New Post', new_post_path  if current_admin
 
-%h1 Posts
+%h3 Blog
 - @posts.each do |post|
   %div{:style=>"border:solid grey 1px; margin-top:1em; padding:0.75em; background:#fafafa;"}
     %h= link_to post.title, post
