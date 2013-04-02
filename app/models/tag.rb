@@ -19,7 +19,7 @@ class Tag < ActiveRecord::Base
   def photo_count
     self.photos.count
   end
-  
+
   def recursive_children
     kids = []
     kids << self

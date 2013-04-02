@@ -3,5 +3,14 @@
 
 = @tag.name
 
+%p
+  %b parent:
+  = @tag.parent ? @tag.parent.name : 'none'
+
+%p
+  %b children
+  - @tag.children.each do |child|
+    = link_to child.name, child
+
 %br
 = link_to 'Back', tags_path
