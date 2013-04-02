@@ -31,7 +31,8 @@
   %div{class: 'col3'}
     %h3 Latest Blog
     %ul
-      - @posts.each do |post|
+      - posts = Post.find(:all, :order => "created_at DESC",:limit => 3)
+      - posts.each do |post|
         %li
           %div.time
             %strong=  post.created_at.strftime("#{post.created_at.day.ordinalize} %b %Y")

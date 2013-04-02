@@ -35,8 +35,8 @@
               
           = yield
           %div{:style=>'clear:both'}
-        - if params[:controller]=='home_page' and params[:action]=='index'
-          = render :partial =>'layouts/footer_area'
+        
+        = render :partial =>'layouts/footer_area'
         #footer
           &copy; Chris Beard Photography
           = Time.now.year
