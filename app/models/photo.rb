@@ -10,6 +10,7 @@ class Photo < ActiveRecord::Base
   include Rails.application.routes.url_helpers
 
   def tag_with!(tag_name)
+    #p "will try to tag it as #{tag_name}"
     tag = Tag.where(name: tag_name).first
     unless tag
       tag = Tag.new(name: tag_name) 
@@ -31,6 +32,13 @@ class Photo < ActiveRecord::Base
         tagging = Tagging.where(:tag_id => tag.id, :photo_id => self.id).first
         tagging.destroy
       end
+    end
+  end
+
+  def recursively_remove_tag(tag_name)
+    tag = Tag.where(:name => tag_name).first
+    tag.recursive_children.flatten.collect{|t| t.name}.each do |name|
+      self.remove_tag name
     end
   end
 

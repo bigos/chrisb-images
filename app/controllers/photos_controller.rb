@@ -39,10 +39,10 @@ class PhotosController < ApplicationController
     if current_user
       if current_user.username == 'admin'
         if params[:add_tag]
-          @photo.tag_with params[:add_tag]
+          @photo.tag_with! params[:add_tag]
         end
         if params[:remove_tag]
-          @photo.remove_tag params[:remove_tag]
+          @photo.recursively_remove_tag params[:remove_tag]
         end
       else
       flash[:error] = 'Error: Only admin can do that.' 
