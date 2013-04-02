@@ -23,7 +23,7 @@ class Tag < ActiveRecord::Base
   def recursive_children
     kids = []
     kids << self
-    p self
+    #p self
     self.children.each do |child|
       kids << child.recursive_children
     end

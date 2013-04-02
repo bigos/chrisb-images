@@ -64,7 +64,7 @@ When(/^I remove tag "(.*?)" from "(.*?)"$/) do |arg1, arg2|
   photo = Photo.where(:attachment_file_name => arg2).first
   tag = Tag.where(:name => arg1).first
   #p tag
-  kk = tag.recursive_children
-  p kk.flatten.uniq.collect{|t| t.name}
-  photo.remove_tag arg1
+  tag.recursive_children.flatten.collect{|t| t.name}.each do |tag_name|
+    photo.remove_tag tag_name
+  end
 end
