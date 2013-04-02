@@ -5,7 +5,7 @@
 
 %p
   %b parent:
-  = @tag.parent ? @tag.parent.name : 'none'
+  = @tag.parent ? link_to(@tag.parent.name, @tag.parent) : 'none'
 
 %p
   %b children
