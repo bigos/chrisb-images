@@ -16,6 +16,20 @@ class Tag < ActiveRecord::Base
     end
   end
 
+  def photo_count
+    self.photos.count
+  end
+  
+  def recursive_children
+    kids = []
+    #p self.children
+    self.children.each do |child|
+      kids << child
+      child.recursive_children
+    end
+    kids
+  end
+
   def set_parent!(tag)
     self.parent_id = tag.id
     self.save

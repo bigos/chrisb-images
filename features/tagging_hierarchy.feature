@@ -27,7 +27,7 @@ Feature: Tag Hierarchy
     | Devon Beach-bw.jpg         |
     | BBC Media Centre.jpg       |
     | Manchester City Lights.jpg |
-    | Picadilly Gardens.jpg      |
+    | Piccadilly Gardens.jpg     |
     | Damsefly.jpg               |
     | Two Dragonflies.jpg        |
     | Dragonfly.jpg              |
@@ -42,10 +42,10 @@ Feature: Tag Hierarchy
 
   Scenario: Tagging Manchester Photos
     When I put following tags as children of:
-    | child               | parent             |
-    | Grerater manchester | England            |
-    | City Centre         | Greater Manchester |
-    | Salford Quays       | Greater Manchester |
+    | child              | parent             |
+    | Greater Manchester | England            |
+    | City Centre        | Greater Manchester |
+    | Salford Quays      | Greater Manchester |
     And I tag following photos as:
     | BBC Media Centre.jpg       | Salford Quays |
     | Piccadilly Gardens.jpg     | City Centre   |
@@ -55,7 +55,7 @@ Feature: Tag Hierarchy
     | Piccadilly Gardens.jpg | City Centre        |
     | Piccadilly Gardens.jpg | Greater Manchester |
     | Piccadilly Gardens.jpg | England            |
-    And tags should have following recursive children counts:
+    And tags should have following photo counts:
     | England            | 3 |
     | Greater Manchester | 3 |
     | City Centre        | 2 |
@@ -63,23 +63,23 @@ Feature: Tag Hierarchy
 
   Scenario: Untagging Manchester Photos
     When I put following tags as children of:
-    | child               | parent             |
-    | Grerater manchester | England            |
-    | City Centre         | Greater Manchester |
-    | Salford Quays       | Greater Manchester |
+    | child              | parent             |
+    | Greater Manchester | England            |
+    | City Centre        | Greater Manchester |
+    | Salford Quays      | Greater Manchester |
     And I tag following photos as:
     | BBC Media Centre.jpg       | Salford Quays |
     | Piccadilly Gardens.jpg     | City Centre   |
     | Manchester City Lights.jpg | City Centre   |
-    | Manchester City Lightd.jpg | Night         |
-    Then tags should have following recursive children counts:
+    | Manchester City Lights.jpg | Night         |
+    Then tags should have following photo counts:
     | England            | 3 |
     | Greater Manchester | 3 |
     | City Centre        | 2 |
     | Salford Quays      | 1 |
     | Night              | 1 |
     When I remove tag "England" from "Manchester City Lights.jpg"
-    Then tags should have following recursive children counts:
+    Then tags should have following photo counts:
     | England            | 2 |
     | Greater Manchester | 2 |
     | City Centre        | 1 |

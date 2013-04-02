@@ -9,7 +9,7 @@ class Photo < ActiveRecord::Base
 
   include Rails.application.routes.url_helpers
 
-  def tag_with(tag_name)
+  def tag_with!(tag_name)
     tag = Tag.where(name: tag_name).first
     unless tag
       tag = Tag.new(name: tag_name) 
@@ -17,6 +17,11 @@ class Photo < ActiveRecord::Base
     end
     tagging=Tagging.new(photo_id: self.id, tag_id: tag.id)
     tagging.save
+    while tag.parent
+      tag = tag.parent
+      tagging=Tagging.new(photo_id: self.id, tag_id: tag.id)
+      tagging.save
+    end
   end
 
   def remove_tag(tag_name)

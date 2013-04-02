@@ -19,7 +19,7 @@ end
 
 When(/^I tag "(.*?)" as "(.*?)"$/) do |arg1, arg2|
   photo = Photo.where(:attachment_file_name => arg1).first
-  photo.tag_with arg2  
+  photo.tag_with! arg2  
 end
 
 Then(/^the photo "(.*?)" should include tag "(.*?)"$/) do |arg1, arg2|
