@@ -4,7 +4,7 @@ class Tag < ActiveRecord::Base
   has_many :taggings
   has_many :photos, :through => :taggings
 
-  has_many :children, :class_name => "Tag", :foreign_key => "parent_id"
+  has_many :children, :class_name => "Tag", :foreign_key => "parent_id", :dependent => :nullify
   belongs_to :parent, :class_name => "Tag"
   
   validates :name, :presence => true, :uniqueness => {:scope => :parent_id}
