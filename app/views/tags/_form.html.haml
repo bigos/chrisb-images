@@ -11,5 +11,8 @@
     = f.label :name
     = f.text_field :name
 
+  .field
+    = f.label 'parent tag'
+    = f.select :parent_id, Tag.find(:all,:order => 'name').collect {|t| [ t.name, t.id ] }, { :include_blank => true }
   .actions
     = f.submit 'Save'

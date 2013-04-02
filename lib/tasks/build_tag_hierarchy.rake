@@ -16,28 +16,23 @@ end
 
 def set_up_tags
   # add tags that are in a relashioship tree
-  rels = {'England' => ['Cornwall', 'Dorset', 'Devon', 'Wiltshire', 
-                         'Lancashire', 'Greater Manchester'],
-          'Greater Manchester' => ['City Centre', 'Salford Quays'],
-          'Scotland' => ['Glen Coe', 'Isle of Skye'],
-          'Wales' => ['Glamorgan', 'Breacon Beacons'],
-          'Italy' => ['Venice'],
-          'Nature' => ['Birds','Insects','Deer'],
-          'Insects' => ['Odonata'],
-          'Odonata' => ['Dragonflies', 'Damselflies']}  
+  rels = {'countries' => ['England', 'Scotland', 'Wales', 'Italy'],
+    'categories' => ['Landscape', 'Seascape', 'Architecture', 'Travel', 
+                    'Nature', 'Ephemera', 'Night', 'Black & White'],
+    'England' => ['Cornwall', 'Dorset', 'Devon', 'Wiltshire', 'Lancashire', 'Greater Manchester'],
+    'Greater Manchester' => ['City Centre', 'Salford Quays'],
+    'Scotland' => ['Glen Coe', 'Isle of Skye'],
+    'Wales' => ['Glamorgan', 'Breacon Beacons'],
+    'Italy' => ['Venice'],
+    'Nature' => ['Birds','Insects','Deer'],
+    'Insects' => ['Odonata'],
+    'Odonata' => ['Dragonflies', 'Damselflies']}  
   rels.each do |parent, children| 
     children.each do |child|
       puts 'Setting ' + parent + ' as parent of: ' + child
       set_parent child, parent
     end
   end    
-  # add tags that are not in a tree
-  categories = ['Landscape', 'Seascape', 'Architecture', 'Travel', 
-                'Ephemera', 'Night', 'Black & White']
-  categories.each do |category|
-    puts "Adding: " + category
-    find_tag_or_create(category)
-  end
 end
 
 namespace :tag_hierarchy do

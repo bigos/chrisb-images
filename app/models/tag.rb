@@ -7,7 +7,7 @@ class Tag < ActiveRecord::Base
   has_many :children, :class_name => "Tag", :foreign_key => "parent_id"
   belongs_to :parent, :class_name => "Tag"
   
-  validates :name, :presence => true, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => {:scope => :parent_id}
   validate :parent_can_not_be_self
 
   def parent_can_not_be_self

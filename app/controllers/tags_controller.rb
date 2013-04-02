@@ -74,6 +74,10 @@ class TagsController < ApplicationController
   # DELETE /tags/1.json
   def destroy
     @tag = Tag.find(params[:id])
+    @tag.children.each do |child|
+      child.parent_id = nil
+      child.save
+    end
     @tag.destroy
 
     respond_to do |format|
