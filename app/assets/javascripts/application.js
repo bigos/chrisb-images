@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery-fileupload
-//= require lightbox 
 //= require_tree .
 
 
