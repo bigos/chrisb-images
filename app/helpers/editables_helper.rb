@@ -13,6 +13,6 @@ module EditablesHelper
     rescue
       content = "#{h $!}\n<br>probably you need to have some content under name: <strong>#{name}</strong> defined in editables"
     end
-    "<div id=\"#{name}\">\n#{content}\n</div>#{edit_link}"
+    "<div id=\"#{name}\" class=\"editable\">\n#{content}\n</div>#{edit_link}"
   end
 end
