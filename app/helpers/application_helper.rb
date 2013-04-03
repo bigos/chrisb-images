@@ -4,15 +4,11 @@ module ApplicationHelper
     Photo.includes(:tags).where(:tags => {:name => tag.name}).count
   end
 
-  def tag_li(tc, increase,level, max_level, type)
+  def tag_li(tag, increase,level, max_level, type)
     str =  "<li>"
-    if type == :tags
-      str << link_to( tc.name, tc)
-    else
-      str << link_to(tc.name, photos_path(:tag => tc.name))
-    end
-    str << tagged_count( tc)
-    str << recursive_tag_links(tc.name, level+increase, max_level, type).to_s
+    str << link_to( tag.name, (type == :tags ? tag : photos_path(:tag => tag.name)))
+    str << tagged_count( tag)
+    str << recursive_tag_links(tag.name, level+increase, max_level, type).to_s
     str << "</li>\n"
   end
 
