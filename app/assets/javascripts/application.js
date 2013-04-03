@@ -23,6 +23,10 @@ jQuery(function() {
   $("a.fancybox").fancybox();
 });
 
+jQuery(function() {
+  $("a.fancydiv").fancybox();
+});
+
 
 $(function() {
     $( "#workshop_start_date" ).datepicker({
