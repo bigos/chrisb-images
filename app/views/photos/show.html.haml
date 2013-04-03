@@ -8,7 +8,7 @@
   %b tags:
   = @photo.tags.count
   -  @photo.tags.each do |t|
-    = t.name
+    = link_to t.name, t
     &nbsp;
 %p
   %b Attachment content type:

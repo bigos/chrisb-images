@@ -15,17 +15,13 @@ module ApplicationHelper
   def tag_links
     top_tags = Tag.where(:parent_id => nil).all
     str = ''
-    if true # show top categories?
-      str << "<ul>"
-      top_tags.each do |tt|
-        str << "<li>#{link_to tt.name, tt}  #{recursive_tag_links(tt.name)}</li>\n"
-      end
-      str << "</ul>"
-    else
-      top_tags.each do |tt|
-        str << "#{recursive_tag_links(tt.name)}\n"
-      end
+    
+    str << "<ul>"
+    top_tags.each do |tt|
+      str << "<li>#{link_to tt.name, tt}  #{recursive_tag_links(tt.name)}</li>\n"
     end
+    str << "</ul>"
+    
     str
   end
 end
