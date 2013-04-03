@@ -7,7 +7,10 @@
 
 .container
   %h2 Upload some images
-  %p after refreshing the page, uploaded images will be visible on the website
+  %p
+    after refreshing the
+    = link_to 'page', photos_path
+    , uploaded images will be visible on the website
     
   = form_for Photo.new, :html => {:multipart => true, :id => "fileupload"  } do |f|
     / The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload
