@@ -5,7 +5,7 @@
 
 #photo_grid{ //border:solid red 1px;
   display:inline-block;
-    width:740px;
+    width:730px;
   ul{ list-style: none outside none;
     padding:0px;
     margin-top:0px;
@@ -38,7 +38,7 @@
       margin: 0px 0px 20px 0px;}
       
     li.column1{//border:solid green;
-      margin: 0px 30px 20px 30px;}
+      margin: 0px 25px 20px 25px;}
     li.column2{//border:solid blue;
       margin: 0px 0px 20px 0px;}
       }
@@ -46,7 +46,13 @@
 
 #tags{
       background: none repeat scroll 0 0 #F9F9F9;
+      a { color: #000; margin:3px;
+}
+      a:visited { color: #000; }
+      a:hover { color:#333;
+      background:#fff;}
       ul{list-style: none outside none;
         padding-left:20px;
         }
+      li{margin:3px;}
   }      
