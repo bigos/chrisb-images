@@ -14,7 +14,8 @@
   - @photos.each do |photo|
     %tr
       %td
-        = photo.attachment.url
+        = link_to image_tag(photo.attachment.url(:thumb)), photo.attachment.url, :class => 'fancybox'
+           
       %td= photo.attachment_content_type
       %td= photo.attachment_file_size
       %td= photo.tags.count

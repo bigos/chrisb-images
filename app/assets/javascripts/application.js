@@ -12,12 +12,16 @@
 //
 //= require ckeditor/init
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery-fileupload
 //= require_tree .
 
 
+jQuery(function() {
+  $("a.fancybox").fancybox();
+});
 
 
 $(function() {

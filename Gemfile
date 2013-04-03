@@ -59,3 +59,5 @@ gem 'jquery_datepicker'
 gem "jquery-fileupload-rails"
 
 gem "recaptcha", :require => "recaptcha/rails"
+
+gem 'fancybox-rails'
