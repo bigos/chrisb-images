@@ -1,27 +1,32 @@
 module ApplicationHelper
 
+  def tagged_count(tag)
+    Photo.includes(:tags).where(:tags => {:name => tag.name}).count
+  end
+
   def recursive_tag_links(tag_name, level, max_level)
     tag = Tag.where(:name=> tag_name).first
     str = ''
     if tag.children
-      if level <= max_level
-        
-        str << '<ul>'
+      if level <= max_level        
+        str << "<ul>"
         tag.children.each do |tc|
-          str << "<li>#{link_to tc.name, tc} #{Photo.includes(:tags).where(:tags => {:name => tc.name}).count}   #{recursive_tag_links(tc.name, level+1, max_level)}</li>\n"
+          str << "\n<!- level: #{level} #{max_level}-->\n"
+          str << "<li>#{link_to tc.name, tc} #{tagged_count tc}"
+          str << " #{recursive_tag_links(tc.name, level+1, max_level)}</li>\n"
         end
         str << '</ul>'
       end
     end
   end
 
-  def tag_links(max_level = 1000)
+  def tag_links(level=1, max_level = 1000)
     top_tags = Tag.where(:parent_id => nil).all
-    str = ''
-    
+    str = ''    
     str << "<ul>"
-    top_tags.each do |tt|
-      str << "<li>#{link_to tt.name, tt} #{Photo.includes(:tags).where(:tags => {:name => tt.name}).count}  #{recursive_tag_links(tt.name, 1, max_level)}</li>\n"
+    top_tags.each do |tc|
+      str << "<li>#{link_to tc.name, tc} #{tagged_count tc}"
+      str << "  #{recursive_tag_links(tc.name, level, max_level)}</li>\n"
     end
     str << "</ul>"
     
