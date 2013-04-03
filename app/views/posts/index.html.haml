@@ -2,7 +2,7 @@
 
 %h3 Blog
 - @posts.each do |post|
-  %div{:style=>"border:solid grey 1px; margin-top:1em; padding:0.75em; background:#fafafa;"}
+  %div.editable{:style=>"border:solid grey 1px; margin-top:1em; padding:0.75em; background:#fafafa;"}
     %h= link_to post.title, post
     %p
       %strong=  post.created_at.strftime("#{post.created_at.day.ordinalize} %b %Y")
