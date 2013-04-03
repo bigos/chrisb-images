@@ -1,28 +1,18 @@
 %h3  Photos
 
-%div.tags{:style=>'float:right;'}
+%div#tags{:style=>'float:right;'}
   = raw tag_links(max_level = 1, :photos)
 
-- columns = 4
-- #align = ["left","center","right"] #3 columns
-- align=["left","center", "center","right"] #4 columns
+- columns = 3
+- col = 0
 
-- rows = @per_page.div @columns
-- remainder = @per_page.remainder @columns
-- rows += 1 if remainder > 0
-
-= @photos.count
-= @per_page.inspect
-
-%table#photo_grid
-  - rows.times do |row|
-    %tr
-      - @columns.times do |column|
-        - photo = @photos[columns*row+column]
-        - if photo
-          %td
-            %div{:class=>align[column]}
-              = link_to image_tag(photo.attachment.url(:medium)), photo.attachment.url, {:class => 'fancybox', :title => photo.attachment_file_name[0..-5].gsub('_',' ')}
+#photo_grid
+  %ul
+    - @photos.each do |photo|
+      %li{:class=> "column#{col}"}
+        - col < columns-1 ? col += 1 : col = 0
+        %div
+          = link_to image_tag(photo.attachment.url(:medium)), photo.attachment.url, {:class => 'fancybox', :title => photo.attachment_file_name[0..-5].gsub('_',' ')}
 
 %div{:style=>'clear:both;'}
   
@@ -32,7 +22,3 @@
 = link_to 'New Photo', new_photo_path
 
 = link_to 'Bulk Photo Upload', '/bulk_upload/new'
-
-%div{:style=>''}
-  #inline-test
-    %p test content

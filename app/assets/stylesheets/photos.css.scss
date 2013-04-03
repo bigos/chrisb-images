@@ -3,9 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-table#photo_grid{
-  td{
-    border:none 1px;
+#photo_grid{ //border:solid red 1px;
+  display:inline-block;
+    width:740px;
+  ul{ list-style: none outside none;
+    padding:0px;
+    margin-top:0px;
+    //border:solid red 1px;
+    li{
+      background: none repeat scroll 0 0 #F9F9F9;
+      float: left;
+      height: 150px;
+      line-height: 150px;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      width: 220px;
+        
   div{text-align:center;
     background:#eee;
     width: 225px;
@@ -19,11 +33,20 @@ table#photo_grid{
  
         }
       }
-  div.left{//border:solid red 1px;
     }
-  div.center{//border:solid green 1px;
+    li.column0{//border:solid red;
+      margin: 0px 0px 20px 0px;}
+      
+    li.column1{//border:solid green;
+      margin: 0px 30px 20px 30px;}
+    li.column2{//border:solid blue;
+      margin: 0px 0px 20px 0px;}
       }
-  div.right{//border:solid blue 1px;
     }
-    }
-    }
+
+#tags{
+      background: none repeat scroll 0 0 #F9F9F9;
+      ul{list-style: none outside none;
+        padding-left:20px;
+        }
+  }      

@@ -2,13 +2,11 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @per_page = 12
-    @columns = 3
 
     if params[:tag]
-      @photos = Photo.includes(:tags).where(:tags => {:name => params[:tag]}).paginate(:page => params[:page], :per_page => @per_page)
+      @photos = Photo.includes(:tags).where(:tags => {:name => params[:tag]}).paginate(:page => params[:page], :per_page => 12)
     else
-      @photos = Photo.paginate(:page => params[:page], :per_page => @per_page) 
+      @photos = Photo.paginate(:page => params[:page], :per_page => 12) 
     end
 
     respond_to do |format|
