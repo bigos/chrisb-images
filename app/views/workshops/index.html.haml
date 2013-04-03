@@ -3,7 +3,6 @@
   %div.workshop
     %h2= workshop.title
     %p= "#{workshop.duration} days - #{workshop.date_range}"
-    %p= workshop.teaser
     = raw workshop.content
     = link_to 'Show', workshop
     = link_to 'Edit', edit_workshop_path(workshop)

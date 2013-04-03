@@ -6,9 +6,6 @@
 %h1
   = @workshop.title + ' - ' + @workshop.date_range
 %p
-  %b Teaser:
-  = @workshop.teaser
-%p
   = raw @workshop.content
 
 = link_to 'Edit', edit_workshop_path(@workshop)
