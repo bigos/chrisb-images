@@ -13,7 +13,10 @@
 
   - @photos.each do |photo|
     %tr
-      %td= image_tag photo.attachment.url(:thumb)
+      %td
+        = lightbox_tag( photo.attachment.url(:thumb), '/assets'+photo.attachment.url(:thumb), 'caption' )
+
+        = photo.attachment.url
       %td= photo.attachment_content_type
       %td= photo.attachment_file_size
       %td= photo.tags.count
