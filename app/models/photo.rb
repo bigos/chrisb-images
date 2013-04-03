@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
   has_many :tags, :through => :taggings
 
   has_attached_file :attachment, :styles => {
-      :thumb => "100x150"}
+      :thumb => "100x150", :medium => "220x150"}
 
   include Rails.application.routes.url_helpers
 

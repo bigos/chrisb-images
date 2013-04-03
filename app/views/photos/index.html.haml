@@ -7,8 +7,8 @@
 - #align = ["left","center","right"] #3 columns
 - align=["left","center", "center","right"] #4 columns
 
-- rows = @per_page.div columns
-- remainder = @per_page.remainder columns
+- rows = @per_page.div @columns
+- remainder = @per_page.remainder @columns
 - rows += 1 if remainder > 0
 
 = @photos.count
@@ -17,12 +17,12 @@
 %table#photo_grid
   - rows.times do |row|
     %tr
-      - columns.times do |column|
+      - @columns.times do |column|
         - photo = @photos[columns*row+column]
         - if photo
           %td
             %div{:class=>align[column]}
-              = link_to image_tag(photo.attachment.url(:thumb)), photo.attachment.url, {:class => 'fancybox', :title => photo.attachment_file_name[0..-5].gsub('_',' ')}
+              = link_to image_tag(photo.attachment.url(:medium)), photo.attachment.url, {:class => 'fancybox', :title => photo.attachment_file_name[0..-5].gsub('_',' ')}
 
 %div{:style=>'clear:both;'}
   
