@@ -18,8 +18,8 @@ module ApplicationHelper
     if tag.children
       if level <= max_level        
         str << "<ul>"
-        tag.children.each do |tc|
-          str << tag_li(tc, 1, level, max_level,type)
+        tag.children.each do |tag|
+          str << tag_li(tag, 1, level, max_level,type)
         end
         str << '</ul>'
       end
@@ -31,8 +31,8 @@ module ApplicationHelper
     level = 1
     str = ''    
     str << "<ul>"
-    top_tags.each do |tc|
-      str << tag_li(tc, 0, level, max_level, type)
+    top_tags.each do |tag|
+      str << tag_li(tag, 0, level, max_level, type)
     end
     str << "</ul>"
   end
