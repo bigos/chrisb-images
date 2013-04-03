@@ -1,13 +1,12 @@
-%h1 Tags#show
-%p Find me in app/views/tags/show.html.haml
-
-= @tag.name
+%h3 Tags
 
 %p
+  %b tag:
+  = @tag.name
+  |
   %b parent:
   = @tag.parent ? link_to(@tag.parent.name, @tag.parent) : 'none'
-
-%p
+  |
   %b children
   - @tag.children.each do |child|
     = link_to child.name, child
