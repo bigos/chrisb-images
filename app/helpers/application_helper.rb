@@ -6,7 +6,7 @@ module ApplicationHelper
     if tag.children
       str << '<ul>'
       tag.children.each do |tc|
-        str << "<li>#{link_to tc.name, tc}  #{recursive_tag_links(tc.name)}</li>\n"
+        str << "<li>#{link_to tc.name, tc} #{Photo.includes(:tags).where(:tags => {:name => tc.name}).count}   #{recursive_tag_links(tc.name)}</li>\n"
       end
       str << '</ul>'
     end
@@ -18,7 +18,7 @@ module ApplicationHelper
     
     str << "<ul>"
     top_tags.each do |tt|
-      str << "<li>#{link_to tt.name, tt}  #{recursive_tag_links(tt.name)}</li>\n"
+      str << "<li>#{link_to tt.name, tt} #{Photo.includes(:tags).where(:tags => {:name => tt.name}).count}  #{recursive_tag_links(tt.name)}</li>\n"
     end
     str << "</ul>"
     
