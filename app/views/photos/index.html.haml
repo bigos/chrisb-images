@@ -2,27 +2,27 @@
 
 %div.tags{:style=>'float:right;'}
   = raw tag_links(max_level = 1, :photos)
-  
-%table{:style=>'float:left; border:solid;'}
-  %tr
-    %th Attachment file name
-    %th Tags
-    %th
-    %th
-    %th
 
-  - @photos.each do |photo|
+- columns = 4
+- #align = ["left","center","right"] #3 columns
+- align=["left","center", "center","right"] #4 columns
+
+- rows = @per_page.div columns
+- remainder = @per_page.remainder columns
+- rows += 1 if remainder > 0
+
+= @photos.count
+= @per_page.inspect
+
+%table#photo_grid
+  - rows.times do |row|
     %tr
-      %td
-        = link_to image_tag(photo.attachment.url(:thumb)), photo.attachment.url, {:class => 'fancybox', :title => photo.attachment_file_name[0..-5].gsub('_',' ')}
-           
-
-      %td
-        = link_to 'contact', '#inline-test', {:class => 'fancydiv'}
-        = photo.tags.count
-      %td= link_to 'Show', photo
-      %td= link_to 'Edit', edit_photo_path(photo)
-      %td= link_to 'Destroy', photo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - columns.times do |column|
+        - photo = @photos[columns*row+column]
+        - if photo
+          %td
+            %div{:class=>align[column]}
+              = link_to image_tag(photo.attachment.url(:thumb)), photo.attachment.url, {:class => 'fancybox', :title => photo.attachment_file_name[0..-5].gsub('_',' ')}
 
 %div{:style=>'clear:both;'}
   
