@@ -16,12 +16,14 @@ module ApplicationHelper
     tag = Tag.where(:name=> tag_name).first
     str = ''
     if tag.children
-      if level <= max_level        
-        str << "<ul>"
-        tag.children.each do |tag|
-          str << tag_li(tag, 1, level, max_level,type)
+      if level <= max_level   
+        if tag.children.size > 0 
+          str << "<ul class=\"depth-#{level}\"> "
+          tag.children.each do |tag|
+            str << tag_li(tag, 1, level, max_level,type)
+          end
+          str << '</ul>'
         end
-        str << '</ul>'
       end
     end
   end
@@ -30,7 +32,7 @@ module ApplicationHelper
     top_tags = Tag.where(:parent_id => nil).all
     level = 1
     str = ''    
-    str << "<ul>"
+    str << "<ul class=\"depth-0\">"
     top_tags.each do |tag|
       str << tag_li(tag, 0, level, max_level, type)
     end
