@@ -9,6 +9,11 @@
         %p.caption
           = slide.caption
 
+#col1a
+  = raw editable_content("news")
+
+%div{:style=>"clear:both;"}
+          
 #col3
   #col3a
     #grid_wrapper
@@ -26,8 +31,3 @@
       = render :partial => 'layouts/twitter_widget'
       
 %div{:style=>"clear:both;"}
-#col2
-  #col2a
-    = raw editable_content("news")
-  #col2b  
-    = raw editable_content("spotlight")
