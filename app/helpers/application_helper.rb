@@ -19,7 +19,7 @@ module ApplicationHelper
       if level <= max_level   
         if tag.children.size > 0 
           str << "<ul class=\"depth-#{level}\"> "
-          tag.children.each do |tag|
+          tag.children.sort_by(& :name).each do |tag|
             str << tag_li(tag, 1, level, max_level,type)
           end
           str << '</ul>'
@@ -29,7 +29,7 @@ module ApplicationHelper
   end
 
   def tag_links( max_level = 1000, type = :tags)
-    top_tags = Tag.where(:parent_id => nil).all
+    top_tags = Tag.where(:parent_id => nil).order(:name).all
     level = 1
     str = ''    
     str << "<ul class=\"depth-0\">"
