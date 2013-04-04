@@ -4,6 +4,7 @@
 
 
 #photo_grid{ //border:solid red 1px;
+  h3{margin-top:0px;}
   display:inline-block;
     width:730px;
   ul{ list-style: none outside none;
@@ -43,7 +44,9 @@
       margin: 0px 0px 20px 0px;}
       }
     }
-
+#tags_wrapper{
+  h3{margin-top:0px;}
+  }
 #tags{
   h3{padding-left:24px;
     margin-top:5px;

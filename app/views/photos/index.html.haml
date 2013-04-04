@@ -1,13 +1,16 @@
-%h3  Photos
 
-%div#tags{:style=>'float:right;'}
+
+#tags_wrapper{:style=>'float:right;'}
   %h3 Gallery Links
-  = raw tag_links(max_level = 1, :photos)
+  %div#tags{:style=>'float:right;'}
+    = raw tag_links(max_level = 1, :photos)
 
 - columns = 3
 - col = 0
 
+
 #photo_grid
+  %h3  Photos
   %ul
     - @photos.each do |photo|
       %li{:class=> "column#{col}"}
