@@ -1,9 +1,9 @@
 class TagsController < ApplicationController
-  before_filter :require_admin
+  before_filter :require_admin, :except => [:index]
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
+    @tags = Tag.where(:parent_id => nil).order(:name)
 
     respond_to do |format|
       format.html # index.html.erb
