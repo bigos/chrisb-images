@@ -1,5 +1,5 @@
-
 class TagsController < ApplicationController
+  before_filter :require_admin
   # GET /tags
   # GET /tags.json
   def index

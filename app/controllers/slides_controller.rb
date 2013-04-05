@@ -1,4 +1,5 @@
 class SlidesController < ApplicationController
+  before_filter :require_admin
   # GET /slides
   # GET /slides.json
   def index

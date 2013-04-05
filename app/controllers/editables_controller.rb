@@ -1,4 +1,5 @@
 class EditablesController < ApplicationController
+  before_filter :require_admin
   # GET /editables
   # GET /editables.json
   def index

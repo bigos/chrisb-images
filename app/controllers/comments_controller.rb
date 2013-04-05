@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :require_admin, :only => [:edit, :update, :destroy]
   # GET /comments
   # GET /comments.json
   def index

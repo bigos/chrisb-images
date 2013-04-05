@@ -1,4 +1,5 @@
 class BulkUploadController < ApplicationController
+  before_filter :require_admin
   def new
     @photo = Photo.new
     
