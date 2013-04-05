@@ -4,10 +4,30 @@
 
 
 #social_buttons > a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+.editable{display:inline-block;
+  border:solid #ccc 1px;
+  margin-top:1em;
+  padding:0.75em;
+  background:#fafafa;
+  img{float:left;
+    margin-right: 25px;
+    margin-bottom:0px;}
+  }
+  
 #teaser-more{font-size:12px;
-	font-style:italic;
-	text-decoretion:none;
+  font-style:italic;
+  text-decoretion:none;
 }
+
+h3.post-title{float:left;
+  margin-top: 0px;
+  }
+    
+p.post-date{float:right;
+  font-weight: bold;
+  margin-top: 0px;
+}
+.comment-count{font-size: 10px;}  
