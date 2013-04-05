@@ -3,6 +3,7 @@ class Tag < ActiveRecord::Base
   
   has_many :taggings
   has_many :photos, :through => :taggings
+  belongs_to :photo
 
   has_many :children, :class_name => "Tag", :foreign_key => "parent_id", :dependent => :nullify
   belongs_to :parent, :class_name => "Tag"

@@ -15,6 +15,13 @@ class TagsController < ApplicationController
   # GET /tags/1.json
   def show
     @tag = Tag.find(params[:id])
+    if current_admin
+      if params[:pin]
+        @tag.photo_id = params[:pin]
+        @tag.save
+      end
+    end
+    # @category_photo = @tag.photo
     @photos = Photo.includes(:tags).where(:tags => {:name => @tag.name})
     @untagged_photos = []
     Photo.all.each do |p|

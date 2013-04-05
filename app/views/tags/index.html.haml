@@ -4,7 +4,7 @@
   - @tags.each do |tag|
     - child_count = tag.photos.size
     - if child_count >= 1
-      - photo = tag.photos[rand(0..(child_count-1))]
+      - photo = tag.photo
       - if photo
         %li
           - html_fragment = capture_haml do
