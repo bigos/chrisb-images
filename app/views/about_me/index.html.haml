@@ -1,11 +1,11 @@
 
 - if params[:section] == 'work'
-  = raw editable_content("about_me_work")
+  != editable_content("about_me_work")
 - elsif  params[:section] == 'personal_tuition'
-  = raw editable_content("personal_tuition")
+  != editable_content("personal_tuition")
 - elsif  params[:section] == 'talks'
-  = raw editable_content("talks")
+  != editable_content("talks")
 - elsif params[:section] == 'equipment'
-  = raw editable_content("about_me_equipment")
+  != editable_content("about_me_equipment")
 - else
-  = raw editable_content("about_me")
+  != editable_content("about_me")

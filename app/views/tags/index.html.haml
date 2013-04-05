@@ -1,7 +1,7 @@
 %h3 Tags
 
 #taglist
-  = raw tag_links(1000, :tags, true)
+  != tag_links(1000, :tags, true)
     
 %hr
 = link_to 'New Tag', new_tag_path 

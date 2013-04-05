@@ -3,7 +3,7 @@
   %div.workshop
     %h2= workshop.title
     %p= "#{workshop.duration} days - #{workshop.date_range}"
-    = raw workshop.content
+    != workshop.content
     = link_to 'Show', workshop
     = link_to 'Edit', edit_workshop_path(workshop)
     = link_to 'Destroy', workshop, :method => :delete, :data => { :confirm => 'Are you sure?' }

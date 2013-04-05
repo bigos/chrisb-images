@@ -6,7 +6,7 @@
 %h1
   = @workshop.title + ' - ' + @workshop.date_range
 %p
-  = raw @workshop.content
+  != @workshop.content
 
 = link_to 'Edit', edit_workshop_path(@workshop)
 \|

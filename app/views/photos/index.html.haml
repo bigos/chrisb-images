@@ -3,7 +3,7 @@
 #tags_wrapper{:style=>'float:right;'}
   %h3 Gallery Links
   %div#tags{:style=>'float:right;'}
-    = raw tag_links(max_level = 1, :photos)
+    != tag_links(max_level = 1, :photos)
 
 - columns = 3
 - col = 0
