@@ -21,8 +21,8 @@
 %div{:style=>'clear:both;'}
   
 = will_paginate @photos
-%br
 
-- if current_admin  
-  = link_to 'New Photo', new_photo_path
-  = link_to 'Bulk Photo Upload', '/bulk_upload/new'
+%div.scaffold-bottom-links
+  - if current_admin  
+    = link_to 'New Photo', new_photo_path
+    = link_to 'Bulk Photo Upload', '/bulk_upload/new'

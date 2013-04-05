@@ -5,9 +5,9 @@ class PhotosController < ApplicationController
   def index
 
     if params[:tag]
-      @photos = Photo.includes(:tags).where(:tags => {:name => params[:tag]}).paginate(:page => params[:page], :per_page => 12)
+      @photos = Photo.includes(:tags).where(:tags => {:name => params[:tag]}).order('photos.created_at DESC').paginate(:page => params[:page], :per_page => 12)
     else
-      @photos = Photo.paginate(:page => params[:page], :per_page => 12) 
+      @photos = Photo.order('created_at DESC').paginate(:page => params[:page], :per_page => 12) 
     end
 
     respond_to do |format|
