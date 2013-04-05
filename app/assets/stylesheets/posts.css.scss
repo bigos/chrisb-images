@@ -7,8 +7,12 @@
   text-decoration: none;
 }
 
-.editable{display:inline-block;
-  border:solid #ccc 1px;
+.show-edit-delete{clear:both;
+  margin:0.5em;
+  }  
+
+.post-teaser{display:inline-block;
+  border:solid darken(white,20%) 1px;
   margin-top:1em;
   padding:0.75em;
   background:#fafafa;
