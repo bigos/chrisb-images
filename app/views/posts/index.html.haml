@@ -1,16 +1,20 @@
 = link_to 'New Post', new_post_path  if current_admin
 
 %h3 Blog
-- @posts.each do |post|
+- @posts.each do |post|  
   %div.editable{:style=>"border:solid grey 1px; margin-top:1em; padding:0.75em; background:#fafafa;"}
     %h= link_to post.title, post
     %p
       %strong=  post.created_at.strftime("#{post.created_at.day.ordinalize} %b %Y")
-    %p= raw post.teaser
+    %p
+      != post.teaser
+      #teaser-more
+        = link_to 'Read more', post
     %div{:style=>"clear:both;"}
-      = link_to 'Show', post
-      = link_to 'Edit', edit_post_path(post)
-      = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      = link_to 'Read more', post
+      - if current_admin
+        = link_to 'Edit', edit_post_path(post)
+        = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
       - comment_count = post.comments.count
       - if comment_count > 0        
         = pluralize comment_count,  "comment"
