@@ -4,4 +4,16 @@
   != tag_links(1000, :tags, true)
     
 %hr
-= link_to 'New Tag', new_tag_path 
+= link_to 'New Tag', new_tag_path
+
+%hr
+%ul#category-photos  
+  - @tags.each do |tag|
+    - photo = tag.photos.last
+    - if photo
+      %li
+        - html_fragment = capture_haml do
+          %div.photo-frame
+            .photo-div= image_tag photo.attachment.url(:medium)
+            .caption= tag.name
+        = link_to html_fragment, photos_path(:tag => tag.name)
